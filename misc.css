@@ -1,0 +1,113 @@
+/* misc.css */
+/* ===============================
+   Miscellaneous Utilities
+   =============================== */
+
+/* Cursor Types 
+   - Handy for interactive elements, or special states.
+*/
+.cursor-auto      { cursor: auto !important; }
+.cursor-default   { cursor: default !important; }
+.cursor-pointer   { cursor: pointer !important; }
+.cursor-wait      { cursor: wait !important; }
+.cursor-text      { cursor: text !important; }
+.cursor-move      { cursor: move !important; }
+.cursor-not-allowed { cursor: not-allowed !important; }
+
+/* Pointer Events */
+.pe-none   { pointer-events: none !important; }
+.pe-auto   { pointer-events: auto !important; }
+
+/* User Select (Disallow or allow text selection) */
+.select-none   { user-select: none !important; }
+.select-text   { user-select: text !important; }
+.select-all    { user-select: all !important; }
+.select-auto   { user-select: auto !important; }
+
+/* Visibility */
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+
+/* Display Toggle (Hide an element while preserving layout) */
+.hidden { display: none !important; }
+
+/* Screen Reader Utilities 
+   - Great for accessibility: hide visually but remain accessible to screen readers.
+*/
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.not-sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Float Utilities 
+   - Not as common in modern layouts but can be useful for smaller tasks.
+*/
+.float-left  { float: left !important; }
+.float-right { float: right !important; }
+.float-none  { float: none !important; }
+
+/* Clearfix 
+   - Helps contain floated children within a parent.
+*/
+.cf::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Text Overflow (Truncation, etc.) */
+.overflow-ellipsis {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.overflow-clip {
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+/* Responsive Variants 
+   - As with other files, replicate as desired (sm, md, lg).
+*/
+@media (min-width: var(--breakpoint-sm)) {
+  .sm\:cursor-pointer { cursor: pointer !important; }
+  .sm\:hidden { display: none !important; }
+  .sm\:float-left { float: left !important; }
+  /* etc. */
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .md\:cursor-not-allowed { cursor: not-allowed !important; }
+  .md\:overflow-ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  /* etc. */
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+  .lg\:select-none { user-select: none !important; }
+  .lg\:float-right { float: right !important; }
+  /* etc. */
+}

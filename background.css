@@ -1,0 +1,145 @@
+/* background.css */
+/* ===============================
+   Background Utilities
+   =============================== */
+
+/* 
+  Example: 
+  .bg-primary-500 {
+    background-color: var(--color-primary-500) !important;
+  }
+  Repeat the pattern for all relevant color scales 
+  (primary, secondary, accent, gray, success, etc.)
+*/
+
+/* Background Color: Primary Scale */
+.bg-primary-50  { background-color: var(--color-primary-50) !important; }
+.bg-primary-100 { background-color: var(--color-primary-100) !important; }
+.bg-primary-200 { background-color: var(--color-primary-200) !important; }
+.bg-primary-300 { background-color: var(--color-primary-300) !important; }
+.bg-primary-400 { background-color: var(--color-primary-400) !important; }
+.bg-primary-500 { background-color: var(--color-primary-500) !important; }
+.bg-primary-600 { background-color: var(--color-primary-600) !important; }
+.bg-primary-700 { background-color: var(--color-primary-700) !important; }
+.bg-primary-800 { background-color: var(--color-primary-800) !important; }
+.bg-primary-900 { background-color: var(--color-primary-900) !important; }
+
+/* Background Color: Secondary Scale */
+.bg-secondary-50  { background-color: var(--color-secondary-50) !important; }
+.bg-secondary-100 { background-color: var(--color-secondary-100) !important; }
+.bg-secondary-200 { background-color: var(--color-secondary-200) !important; }
+.bg-secondary-300 { background-color: var(--color-secondary-300) !important; }
+.bg-secondary-400 { background-color: var(--color-secondary-400) !important; }
+.bg-secondary-500 { background-color: var(--color-secondary-500) !important; }
+.bg-secondary-600 { background-color: var(--color-secondary-600) !important; }
+.bg-secondary-700 { background-color: var(--color-secondary-700) !important; }
+.bg-secondary-800 { background-color: var(--color-secondary-800) !important; }
+.bg-secondary-900 { background-color: var(--color-secondary-900) !important; }
+
+/* Background Color: Accent Scale */
+.bg-accent-50  { background-color: var(--color-accent-50) !important; }
+.bg-accent-100 { background-color: var(--color-accent-100) !important; }
+.bg-accent-200 { background-color: var(--color-accent-200) !important; }
+.bg-accent-300 { background-color: var(--color-accent-300) !important; }
+.bg-accent-400 { background-color: var(--color-accent-400) !important; }
+.bg-accent-500 { background-color: var(--color-accent-500) !important; }
+.bg-accent-600 { background-color: var(--color-accent-600) !important; }
+.bg-accent-700 { background-color: var(--color-accent-700) !important; }
+.bg-accent-800 { background-color: var(--color-accent-800) !important; }
+.bg-accent-900 { background-color: var(--color-accent-900) !important; }
+
+/* Background Color: Gray (Neutral) Scale */
+.bg-gray-50  { background-color: var(--color-gray-50) !important; }
+.bg-gray-100 { background-color: var(--color-gray-100) !important; }
+.bg-gray-200 { background-color: var(--color-gray-200) !important; }
+.bg-gray-300 { background-color: var(--color-gray-300) !important; }
+.bg-gray-400 { background-color: var(--color-gray-400) !important; }
+.bg-gray-500 { background-color: var(--color-gray-500) !important; }
+.bg-gray-600 { background-color: var(--color-gray-600) !important; }
+.bg-gray-700 { background-color: var(--color-gray-700) !important; }
+.bg-gray-800 { background-color: var(--color-gray-800) !important; }
+.bg-gray-900 { background-color: var(--color-gray-900) !important; }
+
+/* Background Color: Semantic (Success, Warning, Error) */
+.bg-success-500 { background-color: var(--color-success-500) !important; }
+.bg-warning-500 { background-color: var(--color-warning-500) !important; }
+.bg-error-500   { background-color: var(--color-error-500) !important; }
+
+/* Background Attachment */
+.bg-fixed  { background-attachment: fixed !important; }
+.bg-local  { background-attachment: local !important; }
+.bg-scroll { background-attachment: scroll !important; }
+
+/* Background Clip */
+.bg-clip-border  { background-clip: border-box !important; }
+.bg-clip-padding { background-clip: padding-box !important; }
+.bg-clip-content { background-clip: content-box !important; }
+.bg-clip-text    { background-clip: text !important; -webkit-background-clip: text !important; }
+
+/* Background Position */
+.bg-left        { background-position: left !important; }
+.bg-center      { background-position: center !important; }
+.bg-right       { background-position: right !important; }
+.bg-top         { background-position: top !important; }
+.bg-bottom      { background-position: bottom !important; }
+.bg-left-top    { background-position: left top !important; }
+.bg-left-bottom { background-position: left bottom !important; }
+.bg-right-top   { background-position: right top !important; }
+.bg-right-bottom{ background-position: right bottom !important; }
+
+/* Background Repeat */
+.bg-repeat       { background-repeat: repeat !important; }
+.bg-no-repeat    { background-repeat: no-repeat !important; }
+.bg-repeat-x     { background-repeat: repeat-x !important; }
+.bg-repeat-y     { background-repeat: repeat-y !important; }
+.bg-repeat-round { background-repeat: round !important; }
+.bg-repeat-space { background-repeat: space !important; }
+
+/* Background Size */
+.bg-auto    { background-size: auto !important; }
+.bg-cover   { background-size: cover !important; }
+.bg-contain { background-size: contain !important; }
+
+/* 
+  Optionally, you can add utilities for background-image,
+  custom gradients, or backgrounds from URLs. For example:
+  
+  .bg-none       { background-image: none !important; }
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--color-primary-400), var(--color-primary-600));
+  }
+  ... etc.
+*/
+
+/* ===============================
+   Responsive Variants
+   =============================== 
+   sm: => @media (min-width: var(--breakpoint-sm))
+   md: => @media (min-width: var(--breakpoint-md))
+   lg: => @media (min-width: var(--breakpoint-lg))
+   (Extend similarly for xl, 2xl, etc.)
+*/
+
+/* Small Devices (sm:) */
+@media (min-width: var(--breakpoint-sm)) {
+  .sm\:bg-primary-500 { background-color: var(--color-primary-500) !important; }
+  .sm\:bg-center      { background-position: center !important; }
+  .sm\:bg-cover       { background-size: cover !important; }
+  /* Continue pattern for any class you'd like to make responsive. */
+}
+
+/* Medium Devices (md:) */
+@media (min-width: var(--breakpoint-md)) {
+  .md\:bg-primary-500 { background-color: var(--color-primary-500) !important; }
+  .md\:bg-center      { background-position: center !important; }
+  .md\:bg-cover       { background-size: cover !important; }
+  /* Continue pattern for relevant classes. */
+}
+
+/* Large Devices (lg:) */
+@media (min-width: var(--breakpoint-lg)) {
+  .lg\:bg-primary-500 { background-color: var(--color-primary-500) !important; }
+  .lg\:bg-center      { background-position: center !important; }
+  .lg\:bg-cover       { background-size: cover !important; }
+  /* Extend the pattern as needed. */
+}

@@ -1,0 +1,188 @@
+/* layout.css */
+/* ===============================
+   Layout Utilities
+   =============================== */
+
+/* Container
+   - Centers content and applies responsive max-widths based on your design tokens.
+*/
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (min-width: var(--breakpoint-sm)) {
+  .container {
+    max-width: var(--container-sm);
+  }
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: var(--breakpoint-xl)) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+@media (min-width: var(--breakpoint-2xl)) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Display Utilities */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-flex { display: flex !important; }
+.d-inline-flex { display: inline-flex !important; }
+.d-grid { display: grid !important; }
+.d-inline-grid { display: inline-grid !important; }
+
+/* Flex Direction & Wrapping (can be extended in flex-grid.css) */
+.flex-row { flex-direction: row !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column { flex-direction: column !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+
+/* Alignment (basic flex alignment utilities) */
+.items-start { align-items: flex-start !important; }
+.items-center { align-items: center !important; }
+.items-end { align-items: flex-end !important; }
+.justify-start { justify-content: flex-start !important; }
+.justify-center { justify-content: center !important; }
+.justify-end { justify-content: flex-end !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-around { justify-content: space-around !important; }
+.justify-evenly { justify-content: space-evenly !important; }
+
+/* Positioning Utilities */
+.pos-static { position: static !important; }
+.pos-relative { position: relative !important; }
+.pos-absolute { position: absolute !important; }
+.pos-fixed { position: fixed !important; }
+.pos-sticky { position: sticky !important; }
+
+/* Overflow Utilities */
+.overflow-auto { overflow: auto !important; }
+.overflow-hidden { overflow: hidden !important; }
+.overflow-scroll { overflow: scroll !important; }
+.overflow-visible { overflow: visible !important; }
+
+.overflow-x-auto { overflow-x: auto !important; }
+.overflow-y-auto { overflow-y: auto !important; }
+.overflow-x-hidden { overflow-x: hidden !important; }
+.overflow-y-hidden { overflow-y: hidden !important; }
+.overflow-x-scroll { overflow-x: scroll !important; }
+.overflow-y-scroll { overflow-y: scroll !important; }
+
+/* ===============================
+   Responsive Variants
+   =============================== */
+/* The following blocks create responsive utilities for mobile (default), tablet (sm:), desktop (md:), and larger (lg:)
+   Adjust the prefixes as needed. 
+*/
+
+/* Small Devices (sm:) */
+@media (min-width: var(--breakpoint-sm)) {
+  .sm\:d-none { display: none !important; }
+  .sm\:d-block { display: block !important; }
+  .sm\:d-inline { display: inline !important; }
+  .sm\:d-inline-block { display: inline-block !important; }
+  .sm\:d-flex { display: flex !important; }
+  .sm\:d-inline-flex { display: inline-flex !important; }
+  .sm\:d-grid { display: grid !important; }
+  .sm\:d-inline-grid { display: inline-grid !important; }
+  
+  .sm\:pos-static { position: static !important; }
+  .sm\:pos-relative { position: relative !important; }
+  .sm\:pos-absolute { position: absolute !important; }
+  .sm\:pos-fixed { position: fixed !important; }
+  .sm\:pos-sticky { position: sticky !important; }
+  
+  .sm\:overflow-auto { overflow: auto !important; }
+  .sm\:overflow-hidden { overflow: hidden !important; }
+  .sm\:overflow-scroll { overflow: scroll !important; }
+  .sm\:overflow-visible { overflow: visible !important; }
+  .sm\:overflow-x-auto { overflow-x: auto !important; }
+  .sm\:overflow-y-auto { overflow-y: auto !important; }
+  .sm\:overflow-x-hidden { overflow-x: hidden !important; }
+  .sm\:overflow-y-hidden { overflow-y: hidden !important; }
+  .sm\:overflow-x-scroll { overflow-x: scroll !important; }
+  .sm\:overflow-y-scroll { overflow-y: scroll !important; }
+}
+
+/* Medium Devices (md:) */
+@media (min-width: var(--breakpoint-md)) {
+  .md\:d-none { display: none !important; }
+  .md\:d-block { display: block !important; }
+  .md\:d-inline { display: inline !important; }
+  .md\:d-inline-block { display: inline-block !important; }
+  .md\:d-flex { display: flex !important; }
+  .md\:d-inline-flex { display: inline-flex !important; }
+  .md\:d-grid { display: grid !important; }
+  .md\:d-inline-grid { display: inline-grid !important; }
+  
+  .md\:pos-static { position: static !important; }
+  .md\:pos-relative { position: relative !important; }
+  .md\:pos-absolute { position: absolute !important; }
+  .md\:pos-fixed { position: fixed !important; }
+  .md\:pos-sticky { position: sticky !important; }
+  
+  .md\:overflow-auto { overflow: auto !important; }
+  .md\:overflow-hidden { overflow: hidden !important; }
+  .md\:overflow-scroll { overflow: scroll !important; }
+  .md\:overflow-visible { overflow: visible !important; }
+  .md\:overflow-x-auto { overflow-x: auto !important; }
+  .md\:overflow-y-auto { overflow-y: auto !important; }
+  .md\:overflow-x-hidden { overflow-x: hidden !important; }
+  .md\:overflow-y-hidden { overflow-y: hidden !important; }
+  .md\:overflow-x-scroll { overflow-x: scroll !important; }
+  .md\:overflow-y-scroll { overflow-y: scroll !important; }
+}
+
+/* Large Devices (lg:) */
+@media (min-width: var(--breakpoint-lg)) {
+  .lg\:d-none { display: none !important; }
+  .lg\:d-block { display: block !important; }
+  .lg\:d-inline { display: inline !important; }
+  .lg\:d-inline-block { display: inline-block !important; }
+  .lg\:d-flex { display: flex !important; }
+  .lg\:d-inline-flex { display: inline-flex !important; }
+  .lg\:d-grid { display: grid !important; }
+  .lg\:d-inline-grid { display: inline-grid !important; }
+  
+  .lg\:pos-static { position: static !important; }
+  .lg\:pos-relative { position: relative !important; }
+  .lg\:pos-absolute { position: absolute !important; }
+  .lg\:pos-fixed { position: fixed !important; }
+  .lg\:pos-sticky { position: sticky !important; }
+  
+  .lg\:overflow-auto { overflow: auto !important; }
+  .lg\:overflow-hidden { overflow: hidden !important; }
+  .lg\:overflow-scroll { overflow: scroll !important; }
+  .lg\:overflow-visible { overflow: visible !important; }
+  .lg\:overflow-x-auto { overflow-x: auto !important; }
+  .lg\:overflow-y-auto { overflow-y: auto !important; }
+  .lg\:overflow-x-hidden { overflow-x: hidden !important; }
+  .lg\:overflow-y-hidden { overflow-y: hidden !important; }
+  .lg\:overflow-x-scroll { overflow-x: scroll !important; }
+  .lg\:overflow-y-scroll { overflow-y: scroll !important; }
+}

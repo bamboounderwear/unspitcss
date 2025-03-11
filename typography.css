@@ -1,0 +1,96 @@
+/* typography.css */
+/* ===============================
+   Typography Utilities
+   =============================== */
+
+/* Font Family */
+.font-sans  { font-family: var(--font-sans), sans-serif !important; }
+.font-serif { font-family: var(--font-serif), serif !important; }
+.font-mono  { font-family: var(--font-mono), monospace !important; }
+
+/* Font Size */
+.text-xs   { font-size: var(--font-size-xs) !important; }
+.text-sm   { font-size: var(--font-size-sm) !important; }
+.text-base { font-size: var(--font-size-base) !important; }
+.text-lg   { font-size: var(--font-size-lg) !important; }
+.text-xl   { font-size: var(--font-size-xl) !important; }
+.text-2xl  { font-size: var(--font-size-2xl) !important; }
+.text-3xl  { font-size: var(--font-size-3xl) !important; }
+.text-4xl  { font-size: var(--font-size-4xl) !important; }
+.text-5xl  { font-size: var(--font-size-5xl) !important; }
+.text-6xl  { font-size: var(--font-size-6xl) !important; }
+
+/* Font Weight */
+.font-light     { font-weight: var(--font-weight-light) !important; }
+.font-normal    { font-weight: var(--font-weight-normal) !important; }
+.font-medium    { font-weight: var(--font-weight-medium) !important; }
+.font-semibold  { font-weight: var(--font-weight-semibold) !important; }
+.font-bold      { font-weight: var(--font-weight-bold) !important; }
+
+/* Line Height */
+.leading-tight   { line-height: var(--line-height-tight) !important; }
+.leading-normal  { line-height: var(--line-height-normal) !important; }
+.leading-relaxed { line-height: var(--line-height-relaxed) !important; }
+
+/* Letter Spacing */
+.tracking-tight { letter-spacing: var(--letter-spacing-tight) !important; }
+.tracking-normal { letter-spacing: var(--letter-spacing-normal) !important; }
+.tracking-wide  { letter-spacing: var(--letter-spacing-wide) !important; }
+
+/* Text Alignment */
+.text-left   { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right  { text-align: right !important; }
+.text-justify { text-align: justify !important; }
+
+/* Text Decoration */
+.underline    { text-decoration: underline !important; }
+.line-through { text-decoration: line-through !important; }
+.no-underline { text-decoration: none !important; }
+
+/* Text Transform */
+.uppercase    { text-transform: uppercase !important; }
+.lowercase    { text-transform: lowercase !important; }
+.capitalize   { text-transform: capitalize !important; }
+.normal-case  { text-transform: none !important; }
+
+/* ===============================
+   Responsive Variants
+   =============================== 
+   sm: => @media (min-width: var(--breakpoint-sm))
+   md: => @media (min-width: var(--breakpoint-md))
+   lg: => @media (min-width: var(--breakpoint-lg))
+*/
+
+/* Small Devices (sm:) */
+@media (min-width: var(--breakpoint-sm)) {
+  .sm\:text-sm   { font-size: var(--font-size-sm) !important; }
+  .sm\:text-base { font-size: var(--font-size-base) !important; }
+  .sm\:text-lg   { font-size: var(--font-size-lg) !important; }
+  /* Continue pattern for other font sizes, alignment, weight, etc. */
+  .sm\:text-left   { text-align: left !important; }
+  .sm\:text-center { text-align: center !important; }
+  .sm\:text-right  { text-align: right !important; }
+}
+
+/* Medium Devices (md:) */
+@media (min-width: var(--breakpoint-md)) {
+  .md\:text-sm   { font-size: var(--font-size-sm) !important; }
+  .md\:text-base { font-size: var(--font-size-base) !important; }
+  .md\:text-lg   { font-size: var(--font-size-lg) !important; }
+  /* Continue pattern for other font sizes, alignment, weight, etc. */
+  .md\:text-left   { text-align: left !important; }
+  .md\:text-center { text-align: center !important; }
+  .md\:text-right  { text-align: right !important; }
+}
+
+/* Large Devices (lg:) */
+@media (min-width: var(--breakpoint-lg)) {
+  .lg\:text-sm   { font-size: var(--font-size-sm) !important; }
+  .lg\:text-base { font-size: var(--font-size-base) !important; }
+  .lg\:text-lg   { font-size: var(--font-size-lg) !important; }
+  /* Continue pattern for other font sizes, alignment, weight, etc. */
+  .lg\:text-left   { text-align: left !important; }
+  .lg\:text-center { text-align: center !important; }
+  .lg\:text-right  { text-align: right !important; }
+}

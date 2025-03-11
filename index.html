@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="reset-normalize.css" />
+        <link rel="stylesheet" href="root.css" />
+        <link rel="stylesheet" href="layout.css" />
+        <link rel="stylesheet" href="spacing.css" />
+        <link rel="stylesheet" href="sizing.css" />
+        <link rel="stylesheet" href="typography.css" />
+        <link rel="stylesheet" href="background.css" />
+        <link rel="stylesheet" href="border.css" />
+        <link rel="stylesheet" href="effects.css" />
+        <link rel="stylesheet" href="flex-grid.css" />
+        <link rel="stylesheet" href="misc.css" />
+        <script src="script.js"></script>
+    </head>
+    <body class="m-5">
+        <button class="border border-gray-300 rounded-md px-3 py-1">Click Me</button>
+        
+        <div class="border border-gray-300 rounded-md p-4 shadow-sm w-full max-w-md d-block">
+  <h2 class="text-lg font-semibold mb-2">Card Title</h2>
+  <p class="text-base mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <button class="border border-gray-300 rounded-sm px-2 py-1">
+    Action
+  </button>
+</div>
+
+        <!-- "Modal" overlay container -->
+<div class="pos-fixed w-screen h-screen d-flex items-center justify-center overflow-auto">
+  <!-- Modal content box -->
+  <div class="border border-gray-300 rounded-md p-4 shadow-md d-block">
+    <h3 class="text-lg font-semibold mb-2">Modal Title</h3>
+    <p class="text-base mb-4">Modal content goes here.</p>
+    <button class="border border-gray-300 rounded-sm px-3 py-1">
+      Close
+    </button>
+  </div>
+</div>
+
+        <form class="d-flex flex-column w-full max-w-md">
+  <label for="email" class="mb-1 text-sm">Email</label>
+  <input
+    id="email"
+    type="email"
+    class="border border-gray-300 rounded-sm mb-3 px-2 py-1"
+  />
+
+  <label for="password" class="mb-1 text-sm">Password</label>
+  <input
+    id="password"
+    type="password"
+    class="border border-gray-300 rounded-sm mb-3 px-2 py-1"
+  />
+
+  <button type="submit" class="border border-gray-300 rounded-md px-3 py-1">
+    Submit
+  </button>
+</form>
+
+        
+    </body>
+</html>
