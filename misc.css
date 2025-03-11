@@ -3,37 +3,78 @@
    Miscellaneous Utilities
    =============================== */
 
-/* Cursor Types 
-   - Handy for interactive elements, or special states.
-*/
-.cursor-auto      { cursor: auto !important; }
-.cursor-default   { cursor: default !important; }
-.cursor-pointer   { cursor: pointer !important; }
-.cursor-wait      { cursor: wait !important; }
-.cursor-text      { cursor: text !important; }
-.cursor-move      { cursor: move !important; }
+/* Cursor Types */
+.cursor-auto        { cursor: auto !important; }
+.cursor-default     { cursor: default !important; }
+.cursor-pointer     { cursor: pointer !important; }
+.cursor-wait        { cursor: wait !important; }
+.cursor-text        { cursor: text !important; }
+.cursor-move        { cursor: move !important; }
+.cursor-help        { cursor: help !important; }
 .cursor-not-allowed { cursor: not-allowed !important; }
+.cursor-none        { cursor: none !important; }
+.cursor-context-menu{ cursor: context-menu !important; }
+.cursor-progress    { cursor: progress !important; }
+.cursor-cell        { cursor: cell !important; }
+.cursor-crosshair   { cursor: crosshair !important; }
+.cursor-vertical-text{ cursor: vertical-text !important; }
+.cursor-alias       { cursor: alias !important; }
+.cursor-copy        { cursor: copy !important; }
+.cursor-no-drop     { cursor: no-drop !important; }
+.cursor-grab        { cursor: grab !important; }
+.cursor-grabbing    { cursor: grabbing !important; }
+.cursor-all-scroll  { cursor: all-scroll !important; }
+.cursor-col-resize  { cursor: col-resize !important; }
+.cursor-row-resize  { cursor: row-resize !important; }
+.cursor-n-resize    { cursor: n-resize !important; }
+.cursor-e-resize    { cursor: e-resize !important; }
+.cursor-s-resize    { cursor: s-resize !important; }
+.cursor-w-resize    { cursor: w-resize !important; }
+.cursor-ne-resize   { cursor: ne-resize !important; }
+.cursor-nw-resize   { cursor: nw-resize !important; }
+.cursor-se-resize   { cursor: se-resize !important; }
+.cursor-sw-resize   { cursor: sw-resize !important; }
+.cursor-ew-resize   { cursor: ew-resize !important; }
+.cursor-ns-resize   { cursor: ns-resize !important; }
+.cursor-nesw-resize { cursor: nesw-resize !important; }
+.cursor-nwse-resize { cursor: nwse-resize !important; }
+.cursor-zoom-in     { cursor: zoom-in !important; }
+.cursor-zoom-out    { cursor: zoom-out !important; }
 
 /* Pointer Events */
-.pe-none   { pointer-events: none !important; }
-.pe-auto   { pointer-events: auto !important; }
+.pointer-events-none   { pointer-events: none !important; }
+.pointer-events-auto   { pointer-events: auto !important; }
+.pointer-events-all    { pointer-events: all !important; }
+.pointer-events-fill   { pointer-events: fill !important; }
+.pointer-events-stroke { pointer-events: stroke !important; }
+.pointer-events-painted{ pointer-events: painted !important; }
+.pointer-events-visible{ pointer-events: visible !important; }
+.pointer-events-visibleFill   { pointer-events: visibleFill !important; }
+.pointer-events-visibleStroke { pointer-events: visibleStroke !important; }
+.pointer-events-visiblePainted{ pointer-events: visiblePainted !important; }
+.pointer-events-boundingBox   { pointer-events: boundingBox !important; }
 
-/* User Select (Disallow or allow text selection) */
-.select-none   { user-select: none !important; }
-.select-text   { user-select: text !important; }
-.select-all    { user-select: all !important; }
-.select-auto   { user-select: auto !important; }
+/* User Select */
+.select-none    { user-select: none !important; }
+.select-text    { user-select: text !important; }
+.select-all     { user-select: all !important; }
+.select-auto    { user-select: auto !important; }
+.select-contain { user-select: contain !important; }
 
-/* Visibility */
-.visible { visibility: visible !important; }
-.invisible { visibility: hidden !important; }
+/* Resize */
+.resize-none   { resize: none !important; }
+.resize        { resize: both !important; }
+.resize-y      { resize: vertical !important; }
+.resize-x      { resize: horizontal !important; }
 
-/* Display Toggle (Hide an element while preserving layout) */
-.hidden { display: none !important; }
+/* List Style */
+.list-none     { list-style-type: none !important; }
+.list-disc     { list-style-type: disc !important; }
+.list-decimal  { list-style-type: decimal !important; }
+.list-inside   { list-style-position: inside !important; }
+.list-outside  { list-style-position: outside !important; }
 
-/* Screen Reader Utilities 
-   - Great for accessibility: hide visually but remain accessible to screen readers.
-*/
+/* Screen Readers */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -57,57 +98,112 @@
   white-space: normal !important;
 }
 
-/* Float Utilities 
-   - Not as common in modern layouts but can be useful for smaller tasks.
-*/
-.float-left  { float: left !important; }
-.float-right { float: right !important; }
-.float-none  { float: none !important; }
+/* Visibility */
+.visible    { visibility: visible !important; }
+.invisible  { visibility: hidden !important; }
+.collapse   { visibility: collapse !important; }
 
-/* Clearfix 
-   - Helps contain floated children within a parent.
-*/
-.cf::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+/* Display */
+.hidden     { display: none !important; }
 
-/* Text Overflow (Truncation, etc.) */
-.overflow-ellipsis {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-}
+/* Box Decoration Break */
+.decoration-slice  { box-decoration-break: slice !important; }
+.decoration-clone  { box-decoration-break: clone !important; }
 
-.overflow-clip {
-  overflow: hidden !important;
-  text-overflow: clip !important;
-  white-space: nowrap !important;
-}
+/* Box Sizing */
+.box-border  { box-sizing: border-box !important; }
+.box-content { box-sizing: content-box !important; }
 
-/* Responsive Variants 
-   - As with other files, replicate as desired (sm, md, lg).
-*/
+/* Float */
+.float-left   { float: left !important; }
+.float-right  { float: right !important; }
+.float-none   { float: none !important; }
+
+/* Clear */
+.clear-left   { clear: left !important; }
+.clear-right  { clear: right !important; }
+.clear-both   { clear: both !important; }
+.clear-none   { clear: none !important; }
+
+/* Isolation */
+.isolate      { isolation: isolate !important; }
+.isolation-auto{ isolation: auto !important; }
+
+/* Object Fit */
+.object-contain      { object-fit: contain !important; }
+.object-cover        { object-fit: cover !important; }
+.object-fill         { object-fit: fill !important; }
+.object-none         { object-fit: none !important; }
+.object-scale-down   { object-fit: scale-down !important; }
+
+/* Object Position */
+.object-bottom     { object-position: bottom !important; }
+.object-center     { object-position: center !important; }
+.object-left       { object-position: left !important; }
+.object-left-bottom{ object-position: left bottom !important; }
+.object-left-top   { object-position: left top !important; }
+.object-right      { object-position: right !important; }
+.object-right-bottom{ object-position: right bottom !important; }
+.object-right-top  { object-position: right top !important; }
+.object-top        { object-position: top !important; }
+
+/* Mix Blend Mode */
+.mix-blend-normal      { mix-blend-mode: normal !important; }
+.mix-blend-multiply    { mix-blend-mode: multiply !important; }
+.mix-blend-screen      { mix-blend-mode: screen !important; }
+.mix-blend-overlay     { mix-blend-mode: overlay !important; }
+.mix-blend-darken      { mix-blend-mode: darken !important; }
+.mix-blend-lighten     { mix-blend-mode: lighten !important; }
+.mix-blend-color-dodge { mix-blend-mode: color-dodge !important; }
+.mix-blend-color-burn  { mix-blend-mode: color-burn !important; }
+.mix-blend-hard-light  { mix-blend-mode: hard-light !important; }
+.mix-blend-soft-light  { mix-blend-mode: soft-light !important; }
+.mix-blend-difference  { mix-blend-mode: difference !important; }
+.mix-blend-exclusion   { mix-blend-mode: exclusion !important; }
+.mix-blend-hue         { mix-blend-mode: hue !important; }
+.mix-blend-saturation  { mix-blend-mode: saturation !important; }
+.mix-blend-color       { mix-blend-mode: color !important; }
+.mix-blend-luminosity  { mix-blend-mode: luminosity !important; }
+
+/* ===============================
+   Responsive Variants
+   =============================== */
+
+/* Small Devices (sm:) */
 @media (min-width: var(--breakpoint-sm)) {
   .sm\:cursor-pointer { cursor: pointer !important; }
+  .sm\:select-none { user-select: none !important; }
+  .sm\:resize { resize: both !important; }
+  .sm\:list-none { list-style-type: none !important; }
+  .sm\:visible { visibility: visible !important; }
   .sm\:hidden { display: none !important; }
   .sm\:float-left { float: left !important; }
-  /* etc. */
+  .sm\:object-cover { object-fit: cover !important; }
+  .sm\:object-center { object-position: center !important; }
 }
 
+/* Medium Devices (md:) */
 @media (min-width: var(--breakpoint-md)) {
-  .md\:cursor-not-allowed { cursor: not-allowed !important; }
-  .md\:overflow-ellipsis {
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-  /* etc. */
+  .md\:cursor-pointer { cursor: pointer !important; }
+  .md\:select-none { user-select: none !important; }
+  .md\:resize { resize: both !important; }
+  .md\:list-none { list-style-type: none !important; }
+  .md\:visible { visibility: visible !important; }
+  .md\:hidden { display: none !important; }
+  .md\:float-left { float: left !important; }
+  .md\:object-cover { object-fit: cover !important; }
+  .md\:object-center { object-position: center !important; }
 }
 
+/* Large Devices (lg:) */
 @media (min-width: var(--breakpoint-lg)) {
+  .lg\:cursor-pointer { cursor: pointer !important; }
   .lg\:select-none { user-select: none !important; }
-  .lg\:float-right { float: right !important; }
-  /* etc. */
+  .lg\:resize { resize: both !important; }
+  .lg\:list-none { list-style-type: none !important; }
+  .lg\:visible { visibility: visible !important; }
+  .lg\:hidden { display: none !important; }
+  .lg\:float-left { float: left !important; }
+  .lg\:object-cover { object-fit: cover !important; }
+  .lg\:object-center { object-position: center !important; }
 }

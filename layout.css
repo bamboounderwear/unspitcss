@@ -14,6 +14,63 @@
   padding-right: var(--space-4);
 }
 
+/* Container Variants */
+.container-sm {
+  max-width: var(--container-sm);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-md {
+  max-width: var(--container-md);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-xl {
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-2xl {
+  max-width: var(--container-2xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.container-fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* Container Padding Variants */
+.container-px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.container-px-1 { padding-left: var(--space-1) !important; padding-right: var(--space-1) !important; }
+.container-px-2 { padding-left: var(--space-2) !important; padding-right: var(--space-2) !important; }
+.container-px-3 { padding-left: var(--space-3) !important; padding-right: var(--space-3) !important; }
+.container-px-4 { padding-left: var(--space-4) !important; padding-right: var(--space-4) !important; }
+.container-px-5 { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
+
 @media (min-width: var(--breakpoint-sm)) {
   .container {
     max-width: var(--container-sm);
@@ -53,25 +110,48 @@
 .d-inline-flex { display: inline-flex !important; }
 .d-grid { display: grid !important; }
 .d-inline-grid { display: inline-grid !important; }
+.d-table { display: table !important; }
+.d-table-row { display: table-row !important; }
+.d-table-cell { display: table-cell !important; }
+.d-contents { display: contents !important; }
+.d-list-item { display: list-item !important; }
 
-/* Flex Direction & Wrapping (can be extended in flex-grid.css) */
-.flex-row { flex-direction: row !important; }
-.flex-row-reverse { flex-direction: row-reverse !important; }
-.flex-column { flex-direction: column !important; }
-.flex-column-reverse { flex-direction: column-reverse !important; }
-.flex-wrap { flex-wrap: wrap !important; }
-.flex-nowrap { flex-wrap: nowrap !important; }
+/* Box Sizing */
+.box-border { box-sizing: border-box !important; }
+.box-content { box-sizing: content-box !important; }
 
-/* Alignment (basic flex alignment utilities) */
-.items-start { align-items: flex-start !important; }
-.items-center { align-items: center !important; }
-.items-end { align-items: flex-end !important; }
-.justify-start { justify-content: flex-start !important; }
-.justify-center { justify-content: center !important; }
-.justify-end { justify-content: flex-end !important; }
-.justify-between { justify-content: space-between !important; }
-.justify-around { justify-content: space-around !important; }
-.justify-evenly { justify-content: space-evenly !important; }
+/* Float */
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.float-none { float: none !important; }
+.clearfix::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+/* Clear */
+.clear-left { clear: left !important; }
+.clear-right { clear: right !important; }
+.clear-both { clear: both !important; }
+.clear-none { clear: none !important; }
+
+/* Object Fit & Position */
+.object-contain { object-fit: contain !important; }
+.object-cover { object-fit: cover !important; }
+.object-fill { object-fit: fill !important; }
+.object-none { object-fit: none !important; }
+.object-scale-down { object-fit: scale-down !important; }
+
+.object-bottom { object-position: bottom !important; }
+.object-center { object-position: center !important; }
+.object-left { object-position: left !important; }
+.object-left-bottom { object-position: left bottom !important; }
+.object-left-top { object-position: left top !important; }
+.object-right { object-position: right !important; }
+.object-right-bottom { object-position: right bottom !important; }
+.object-right-top { object-position: right top !important; }
+.object-top { object-position: top !important; }
 
 /* Positioning Utilities */
 .pos-static { position: static !important; }
@@ -80,25 +160,85 @@
 .pos-fixed { position: fixed !important; }
 .pos-sticky { position: sticky !important; }
 
+/* Top, Right, Bottom, Left */
+.top-0 { top: 0 !important; }
+.right-0 { right: 0 !important; }
+.bottom-0 { bottom: 0 !important; }
+.left-0 { left: 0 !important; }
+
+.top-auto { top: auto !important; }
+.right-auto { right: auto !important; }
+.bottom-auto { bottom: auto !important; }
+.left-auto { left: auto !important; }
+
+/* Inset Shortcuts */
+.inset-0 { top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; }
+.inset-auto { top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; }
+.inset-x-0 { left: 0 !important; right: 0 !important; }
+.inset-y-0 { top: 0 !important; bottom: 0 !important; }
+.inset-x-auto { left: auto !important; right: auto !important; }
+.inset-y-auto { top: auto !important; bottom: auto !important; }
+
+/* Z-Index */
+.z-0 { z-index: 0 !important; }
+.z-10 { z-index: 10 !important; }
+.z-20 { z-index: 20 !important; }
+.z-30 { z-index: 30 !important; }
+.z-40 { z-index: 40 !important; }
+.z-50 { z-index: 50 !important; }
+.z-auto { z-index: auto !important; }
+
+/* Layout Specific Z-Index */
+.z-dropdown { z-index: var(--z-index-dropdown) !important; }
+.z-sticky { z-index: var(--z-index-sticky) !important; }
+.z-fixed { z-index: var(--z-index-fixed) !important; }
+.z-modal-backdrop { z-index: var(--z-index-modal-backdrop) !important; }
+.z-modal { z-index: var(--z-index-modal) !important; }
+.z-popover { z-index: var(--z-index-popover) !important; }
+.z-tooltip { z-index: var(--z-index-tooltip) !important; }
+
+/* Visibility */
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+.collapse { visibility: collapse !important; }
+
 /* Overflow Utilities */
 .overflow-auto { overflow: auto !important; }
 .overflow-hidden { overflow: hidden !important; }
-.overflow-scroll { overflow: scroll !important; }
+.overflow-clip { overflow: clip !important; }
 .overflow-visible { overflow: visible !important; }
+.overflow-scroll { overflow: scroll !important; }
 
 .overflow-x-auto { overflow-x: auto !important; }
 .overflow-y-auto { overflow-y: auto !important; }
 .overflow-x-hidden { overflow-x: hidden !important; }
 .overflow-y-hidden { overflow-y: hidden !important; }
+.overflow-x-clip { overflow-x: clip !important; }
+.overflow-y-clip { overflow-y: clip !important; }
+.overflow-x-visible { overflow-x: visible !important; }
+.overflow-y-visible { overflow-y: visible !important; }
 .overflow-x-scroll { overflow-x: scroll !important; }
 .overflow-y-scroll { overflow-y: scroll !important; }
+
+/* Overscroll Behavior */
+.overscroll-auto { overscroll-behavior: auto !important; }
+.overscroll-contain { overscroll-behavior: contain !important; }
+.overscroll-none { overscroll-behavior: none !important; }
+
+.overscroll-x-auto { overscroll-behavior-x: auto !important; }
+.overscroll-y-auto { overscroll-behavior-y: auto !important; }
+.overscroll-x-contain { overscroll-behavior-x: contain !important; }
+.overscroll-y-contain { overscroll-behavior-y: contain !important; }
+.overscroll-x-none { overscroll-behavior-x: none !important; }
+.overscroll-y-none { overscroll-behavior-y: none !important; }
+
+/* Isolation */
+.isolate { isolation: isolate !important; }
+.isolation-auto { isolation: auto !important; }
 
 /* ===============================
    Responsive Variants
    =============================== */
-/* The following blocks create responsive utilities for mobile (default), tablet (sm:), desktop (md:), and larger (lg:)
-   Adjust the prefixes as needed. 
-*/
 
 /* Small Devices (sm:) */
 @media (min-width: var(--breakpoint-sm)) {
@@ -110,6 +250,9 @@
   .sm\:d-inline-flex { display: inline-flex !important; }
   .sm\:d-grid { display: grid !important; }
   .sm\:d-inline-grid { display: inline-grid !important; }
+  .sm\:d-table { display: table !important; }
+  .sm\:d-table-row { display: table-row !important; }
+  .sm\:d-table-cell { display: table-cell !important; }
   
   .sm\:pos-static { position: static !important; }
   .sm\:pos-relative { position: relative !important; }
@@ -117,16 +260,28 @@
   .sm\:pos-fixed { position: fixed !important; }
   .sm\:pos-sticky { position: sticky !important; }
   
+  .sm\:float-left { float: left !important; }
+  .sm\:float-right { float: right !important; }
+  .sm\:float-none { float: none !important; }
+  
+  .sm\:object-contain { object-fit: contain !important; }
+  .sm\:object-cover { object-fit: cover !important; }
+  .sm\:object-fill { object-fit: fill !important; }
+  .sm\:object-none { object-fit: none !important; }
+  .sm\:object-scale-down { object-fit: scale-down !important; }
+  
   .sm\:overflow-auto { overflow: auto !important; }
   .sm\:overflow-hidden { overflow: hidden !important; }
-  .sm\:overflow-scroll { overflow: scroll !important; }
   .sm\:overflow-visible { overflow: visible !important; }
-  .sm\:overflow-x-auto { overflow-x: auto !important; }
-  .sm\:overflow-y-auto { overflow-y: auto !important; }
-  .sm\:overflow-x-hidden { overflow-x: hidden !important; }
-  .sm\:overflow-y-hidden { overflow-y: hidden !important; }
-  .sm\:overflow-x-scroll { overflow-x: scroll !important; }
-  .sm\:overflow-y-scroll { overflow-y: scroll !important; }
+  .sm\:overflow-scroll { overflow: scroll !important; }
+  
+  .sm\:z-0 { z-index: 0 !important; }
+  .sm\:z-10 { z-index: 10 !important; }
+  .sm\:z-20 { z-index: 20 !important; }
+  .sm\:z-30 { z-index: 30 !important; }
+  .sm\:z-40 { z-index: 40 !important; }
+  .sm\:z-50 { z-index: 50 !important; }
+  .sm\:z-auto { z-index: auto !important; }
 }
 
 /* Medium Devices (md:) */
@@ -139,6 +294,9 @@
   .md\:d-inline-flex { display: inline-flex !important; }
   .md\:d-grid { display: grid !important; }
   .md\:d-inline-grid { display: inline-grid !important; }
+  .md\:d-table { display: table !important; }
+  .md\:d-table-row { display: table-row !important; }
+  .md\:d-table-cell { display: table-cell !important; }
   
   .md\:pos-static { position: static !important; }
   .md\:pos-relative { position: relative !important; }
@@ -146,16 +304,28 @@
   .md\:pos-fixed { position: fixed !important; }
   .md\:pos-sticky { position: sticky !important; }
   
+  .md\:float-left { float: left !important; }
+  .md\:float-right { float: right !important; }
+  .md\:float-none { float: none !important; }
+  
+  .md\:object-contain { object-fit: contain !important; }
+  .md\:object-cover { object-fit: cover !important; }
+  .md\:object-fill { object-fit: fill !important; }
+  .md\:object-none { object-fit: none !important; }
+  .md\:object-scale-down { object-fit: scale-down !important; }
+  
   .md\:overflow-auto { overflow: auto !important; }
   .md\:overflow-hidden { overflow: hidden !important; }
-  .md\:overflow-scroll { overflow: scroll !important; }
   .md\:overflow-visible { overflow: visible !important; }
-  .md\:overflow-x-auto { overflow-x: auto !important; }
-  .md\:overflow-y-auto { overflow-y: auto !important; }
-  .md\:overflow-x-hidden { overflow-x: hidden !important; }
-  .md\:overflow-y-hidden { overflow-y: hidden !important; }
-  .md\:overflow-x-scroll { overflow-x: scroll !important; }
-  .md\:overflow-y-scroll { overflow-y: scroll !important; }
+  .md\:overflow-scroll { overflow: scroll !important; }
+  
+  .md\:z-0 { z-index: 0 !important; }
+  .md\:z-10 { z-index: 10 !important; }
+  .md\:z-20 { z-index: 20 !important; }
+  .md\:z-30 { z-index: 30 !important; }
+  .md\:z-40 { z-index: 40 !important; }
+  .md\:z-50 { z-index: 50 !important; }
+  .md\:z-auto { z-index: auto !important; }
 }
 
 /* Large Devices (lg:) */
@@ -168,6 +338,9 @@
   .lg\:d-inline-flex { display: inline-flex !important; }
   .lg\:d-grid { display: grid !important; }
   .lg\:d-inline-grid { display: inline-grid !important; }
+  .lg\:d-table { display: table !important; }
+  .lg\:d-table-row { display: table-row !important; }
+  .lg\:d-table-cell { display: table-cell !important; }
   
   .lg\:pos-static { position: static !important; }
   .lg\:pos-relative { position: relative !important; }
@@ -175,14 +348,26 @@
   .lg\:pos-fixed { position: fixed !important; }
   .lg\:pos-sticky { position: sticky !important; }
   
+  .lg\:float-left { float: left !important; }
+  .lg\:float-right { float: right !important; }
+  .lg\:float-none { float: none !important; }
+  
+  .lg\:object-contain { object-fit: contain !important; }
+  .lg\:object-cover { object-fit: cover !important; }
+  .lg\:object-fill { object-fit: fill !important; }
+  .lg\:object-none { object-fit: none !important; }
+  .lg\:object-scale-down { object-fit: scale-down !important; }
+  
   .lg\:overflow-auto { overflow: auto !important; }
   .lg\:overflow-hidden { overflow: hidden !important; }
-  .lg\:overflow-scroll { overflow: scroll !important; }
   .lg\:overflow-visible { overflow: visible !important; }
-  .lg\:overflow-x-auto { overflow-x: auto !important; }
-  .lg\:overflow-y-auto { overflow-y: auto !important; }
-  .lg\:overflow-x-hidden { overflow-x: hidden !important; }
-  .lg\:overflow-y-hidden { overflow-y: hidden !important; }
-  .lg\:overflow-x-scroll { overflow-x: scroll !important; }
-  .lg\:overflow-y-scroll { overflow-y: scroll !important; }
+  .lg\:overflow-scroll { overflow: scroll !important; }
+  
+  .lg\:z-0 { z-index: 0 !important; }
+  .lg\:z-10 { z-index: 10 !important; }
+  .lg\:z-20 { z-index: 20 !important; }
+  .lg\:z-30 { z-index: 30 !important; }
+  .lg\:z-40 { z-index: 40 !important; }
+  .lg\:z-50 { z-index: 50 !important; }
+  .lg\:z-auto { z-index: auto !important; }
 }
