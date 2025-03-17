@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A full-featured, customizable CSS utility framework generator in SCSS with integrated design tokens and grid system.",
     "scripts": {
-      "build": "sass src/scss/utilities.scss dist/utilities.css --no-source-map",
+      "build": "sass src/scss/utilities.scss dist/utilities.css --no-source-map && cp src/index.html dist/index.html",
       "watch": "sass --watch src/scss/utilities.scss:dist/utilities.css"
     },
     "author": "Your Name",
