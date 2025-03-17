@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Utility Framework Demo</title>
+  <link rel="stylesheet" href="../dist/utilities.css">
+  <style>
+    /* Demo-specific styles */
+    .demo-box {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      text-align: center;
+      padding: 16px;
+    }
+    header, footer {
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="p-2">
+  <header class="text-center p-2 bg-primary">
+    <h1>CSS Utility Framework</h1>
+    <p>Responsive, customizable, and built with design tokens.</p>
+  </header>
+
+  <main class="p-2">
+    <section>
+      <h2>Spacing Utilities</h2>
+      <div class="m-2 p-2 bg-secondary text-white">m-2 and p-2 applied</div>
+    </section>
+
+    <section>
+      <h2>Grid System</h2>
+      <div class="grid grid-md">
+        <div class="demo-box">Item 1</div>
+        <div class="demo-box">Item 2</div>
+        <div class="demo-box">Item 3</div>
+        <div class="demo-box">Item 4</div>
+        <div class="demo-box">Item 5</div>
+        <div class="demo-box">Item 6</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center p-2 bg-secondary">
+    <p>© 2025 Your Brand Identity</p>
+  </footer>
+</body>
+</html>
