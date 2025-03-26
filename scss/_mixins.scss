@@ -1,6 +1,4 @@
-/* _mixins.scss
-   Common mixins for media queries, containers, etc.
-*/
+/* _mixins.scss */
 
 $xs: 0;
 $sm: 576px;
@@ -42,7 +40,6 @@ $xxl: 1400px;
   }
 }
 
-/* Container mixin for multiple breakpoints */
 @mixin container {
   width: 100%;
   margin-right: auto;

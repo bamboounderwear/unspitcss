@@ -1,10 +1,9 @@
-/* _grid.scss
-   Responsive grid system with flex. 
-   Using percentage($i / 12) to avoid invalid operations with 100%
+/* _grid.scss 
+   Make sure @use "sass:math"; is at the top, before @import or rules
 */
 
-@import 'mixins'; // for respond-to()
-@use "sass:math"; // to use math.percentage()
+@use "sass:math";
+@import 'mixins'; // older style import to get respond-to()
 
 .row {
   display: flex;
@@ -19,39 +18,34 @@
 }
 
 /* 
-   We'll define .col-sm-X, .col-md-X, .col-lg-X, .col-xl-X, .col-xxl-X for X in 1..12
-   Using math.percentage($i / 12) to produce e.g. 8.33333%
+   .col-sm-X, .col-md-X, .col-lg-X, .col-xl-X, .col-xxl-X 
+   Using math.percentage($i / 12) => e.g. 8.33333%
 */
 @for $i from 1 through 12 {
-
   .col-sm-#{$i} {
     @include respond-to(sm) {
       flex: 0 0 math.percentage($i / 12);
       max-width: math.percentage($i / 12);
     }
   }
-
   .col-md-#{$i} {
     @include respond-to(md) {
       flex: 0 0 math.percentage($i / 12);
       max-width: math.percentage($i / 12);
     }
   }
-
   .col-lg-#{$i} {
     @include respond-to(lg) {
       flex: 0 0 math.percentage($i / 12);
       max-width: math.percentage($i / 12);
     }
   }
-
   .col-xl-#{$i} {
     @include respond-to(xl) {
       flex: 0 0 math.percentage($i / 12);
       max-width: math.percentage($i / 12);
     }
   }
-
   .col-xxl-#{$i} {
     @include respond-to(xxl) {
       flex: 0 0 math.percentage($i / 12);

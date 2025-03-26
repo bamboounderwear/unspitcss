@@ -1,11 +1,10 @@
-/* _utilities.scss 
-   Contains utility classes, including the gap loop 
-   that requires $generic-gap-values 
+/* _utilities.scss */
+@import 'mixins'; // older style import for respond-to
+
+/* 
+   Define $generic-gap-values FIRST 
+   so .gap-#{$gap} loops won't break 
 */
-
-@import 'mixins'; // ensure respond-to() is available
-
-/* Ensure $generic-gap-values is defined FIRST */
 $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 /* Spacing utilities */
@@ -132,7 +131,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .justify-between { justify-content: space-between !important; }
 .align-center { align-items: center !important; }
 
-/* Gap utilities for flex/grid */
+/* Gap utilities */
 @each $gap in $generic-gap-values {
   .gap-#{$gap} {
     gap: var(--spacing-#{$gap}) !important;

@@ -1,8 +1,4 @@
-/* _base.scss 
-   Basic styling & vertical rhythm. 
-   Also addresses the deprecation of darken() 
-*/
-
+/* _base.scss */
 @use "sass:color";
 
 body {
@@ -32,17 +28,13 @@ a {
   }
 }
 
-/* 
-   Example usage of $primary-color from _variables.scss
-   Replacing darken() with color.adjust(...) 
-*/
+/* Replacing deprecated darken() with color.adjust(...) */
 button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   cursor: pointer;
 
-  // Normal state uses CSS custom property
   background-color: var(--color-primary);
   color: var(--color-white);
 
@@ -51,9 +43,11 @@ button {
   padding: var(--spacing-2) var(--spacing-3);
   transition: background-color 0.2s ease;
 
-  // For hover, do color manipulation in Sass
-  // "color.adjust($primary-color, $lightness: -10%)" is the recommended approach
   &:hover {
+    /* 
+       If $primary-color is defined in _variables.scss 
+       then we can do color.adjust($primary-color, $lightness: -10%) 
+    */
     background-color: color.adjust($primary-color, $lightness: -10%);
   }
 }

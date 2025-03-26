@@ -1,9 +1,5 @@
-/* 
-  _variables.scss
-  - Contains both Sass variables & CSS custom properties
-*/
-
-/* Sass color variable for manipulations */
+/* _variables.scss */
+/* Sass variable for color manipulation */
 $primary-color: #3498db;
 
 :root {
@@ -20,7 +16,7 @@ $primary-color: #3498db;
   --color-warning: #f1c40f;
   --color-danger: #e74c3c;
 
-  /* Default background/text */
+  /* Background/text */
   --color-background: #ffffff;
   --color-text: #000000;
 
@@ -31,7 +27,7 @@ $primary-color: #3498db;
 
   /* Spacing Scale */
   --spacing-0: 0;
-  --spacing-1: 0.25rem; 
+  --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 1rem;
   --spacing-4: 1.5rem;
@@ -63,7 +59,7 @@ $primary-color: #3498db;
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
 
   /* Border Radius */
-  --border-radius-sm: 0.25rem; 
+  --border-radius-sm: 0.25rem;
   --border-radius-md: 0.5rem;
   --border-radius-lg: 1rem;
 

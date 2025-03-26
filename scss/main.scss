@@ -1,18 +1,17 @@
-/* main.scss
-   The master file importing all partials
+/* main.scss 
+   The master entry file that compiles everything into css/framework.css
+   Using the older @import approach for partials, but we put them 
+   above any extra rules in this file.
 */
 
 @import 'variables';
 @import 'reset';
-@import 'mixins'; // we want mixins before grid/utilities
+@import 'mixins';
 @import 'base';
 @import 'utilities';
 @import 'grid';
 
-/* 
-  You can add any project-wide overrides or 
-  custom styles below this line
-*/
+/* Any global overrides or custom styles can go below */
 
 html {
   scroll-behavior: smooth;
