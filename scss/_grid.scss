@@ -80,3 +80,11 @@
 .container {
   @include container;
 }
+
+/* .col-auto => auto width column in a flex row */
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+  

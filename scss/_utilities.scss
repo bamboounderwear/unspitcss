@@ -41,6 +41,22 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
+/* Margin auto: centers block-level elements horizontally */
+.m-auto {
+    margin: auto !important;
+  }
+  
+  /* Horizontal & Vertical auto margins */
+  .mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  
+
 /* Display Utilities */
 .display-block { display: block !important; }
 .display-inline { display: inline !important; }
@@ -113,6 +129,26 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .background-success     { background-color: var(--color-success) !important; color: var(--color-white) !important; }
 .background-warning     { background-color: var(--color-warning) !important; }
 .background-danger      { background-color: var(--color-danger) !important; color: var(--color-white) !important; }
+
+/* Extended background utilities */
+.background-secondary {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-white) !important; /* or choose contrast color */
+  }
+  .background-info {
+    background-color: var(--color-info) !important;
+    color: var(--color-white) !important;
+  }
+  .background-dark {
+    background-color: var(--color-dark) !important;
+    color: var(--color-white) !important;
+  }
+  
+  /* Extended text color utilities */
+  .text-secondary { color: var(--color-secondary) !important; }
+  .text-info      { color: var(--color-info) !important; }
+  .text-dark      { color: var(--color-dark) !important; }
+  
 
 /* Text Color Utilities */
 .text-black    { color: var(--color-black) !important; }
@@ -206,3 +242,21 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .z-50  { z-index: var(--z-50) !important; }
 .z-100 { z-index: var(--z-100) !important; }
 .z-999 { z-index: var(--z-999) !important; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  
+  /* Fade In/Out classes */
+  .fade-in {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  .fade-out {
+    animation: fadeOut 0.3s ease forwards;
+  }
+  
