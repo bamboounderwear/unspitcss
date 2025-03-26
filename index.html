@@ -3,47 +3,124 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SCSS Framework Demo</title>
-  <!-- Include compiled CSS -->
+  <title>My SCSS Framework Landing Page</title>
+  <!-- Include our compiled framework CSS -->
   <link rel="stylesheet" href="css/framework.css" />
 </head>
 <body>
-  <header class="background-black text-center py-5 text-white">
-    <h1 class="text-2xl">SCSS Framework Demo</h1>
+
+  <!-- HERO SECTION -->
+  <header class="background-dark text-white text-center py-10 fade-in">
+    <div class="container">
+      <h1 class="text-2xl mb-3">Welcome to Our Awesome Framework</h1>
+      <p class="text-md mx-auto w-75">
+        A lightweight SCSS utility framework, now with advanced spacing, color, grid, and animation utilities.
+      </p>
+      <div class="mt-5">
+        <a href="#features" 
+           class="background-primary hover-scale text-white py-2 px-5 border-radius-sm transition-fast display-inline-block">
+          Learn More
+        </a>
+      </div>
+    </div>
   </header>
 
-  <main class="container mt-5">
-    <section>
-      <h2 class="text-xl">Basic Elements</h2>
-      <p>This is some text styled with the SCSS framework.</p>
-      <button class="mt-2 py-1 px-2 display-inline-block border-radius-sm shadow-sm">
-        Click Me
-      </button>
+  <!-- FEATURES SECTION -->
+  <main class="container mt-5" id="features">
+    <!-- HEADLINE -->
+    <section class="mb-5">
+      <h2 class="text-xl text-center">Why You’ll Love This Framework</h2>
+      <p class="text-center mx-auto w-50 mt-2">
+        It’s easy to use, highly customizable, and packed with useful utilities for quick development.  
+      </p>
     </section>
 
-    <section class="mt-5">
-      <h2 class="text-xl mb-3">Grid Example</h2>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-3 background-light-gray p-3 border shadow-sm">
-          <p class="mb-0">Column A</p>
-        </div>
-        <div class="col-sm-6 col-md-4 offset-md-2 col-lg-3 background-light-gray p-3 border shadow-sm">
-          <p class="mb-0">Column B</p>
-        </div>
+    <!-- FEATURE GRID -->
+    <section class="row row-gap-4 col-gap-3 fade-in">
+      <!-- CARD 1 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 background-secondary p-4 shadow-md border-radius-md text-white">
+        <h3 class="text-lg mb-2">Extended Spacing</h3>
+        <p class="mb-3">
+          Utilize <code>.m-auto</code>, <code>.mx-auto</code>, negative margins, and more for perfect layouts.
+        </p>
+        <a href="#" class="text-white text-underline transition-fast hover-scale">
+          Read Docs
+        </a>
+      </div>
+      <!-- CARD 2 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 background-info p-4 shadow-md border-radius-md text-white">
+        <h3 class="text-lg mb-2">New Color Classes</h3>
+        <p class="mb-3">
+          Secondary, info, dark variants, plus alpha backgrounds for added style.
+        </p>
+        <a href="#" class="text-white text-underline transition-fast hover-scale">
+          See More
+        </a>
+      </div>
+      <!-- CARD 3 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 background-primary p-4 shadow-md border-radius-md text-white">
+        <h3 class="text-lg mb-2">Advanced Grid & Flex</h3>
+        <p class="mb-3">
+          Auto columns, flex order classes, row-gap, col-gap, and more for robust layouts.
+        </p>
+        <a href="#" class="text-white text-underline transition-fast hover-scale">
+          Get Started
+        </a>
+      </div>
+      <!-- CARD 4 -->
+      <div class="col-sm-6 col-md-4 col-lg-3 background-dark p-4 shadow-md border-radius-md text-white">
+        <h3 class="text-lg mb-2">Animations & Transitions</h3>
+        <p class="mb-3">
+          Fade effects, scale hover, and transition utilities for modern interactions.
+        </p>
+        <a href="#" class="text-white text-underline transition-fast hover-scale">
+          View Examples
+        </a>
       </div>
     </section>
 
-    <section class="mt-5">
-      <h2 class="text-xl mb-3">Utility Classes</h2>
-      <div class="display-flex gap-2">
-        <div class="background-black text-white p-2 shadow-md border-radius-sm">Box 1</div>
-        <div class="background-black text-white p-2 shadow-md border-radius-sm">Box 2</div>
+    <!-- MORE EXAMPLES SECTION -->
+    <section class="mt-10">
+      <h2 class="text-xl mb-4 text-center">More Examples</h2>
+
+      <!-- FLEX SHOWCASE -->
+      <div class="row display-flex align-center justify-between background-light-gray p-3 border-radius-sm">
+        <div class="col-auto order-2 background-dark text-white p-2 border-radius-sm hover-scale transition-slow">
+          <p class="mb-0">I'm an auto-width .col-auto item, with <code>.order-2</code></p>
+        </div>
+        <div class="col-auto order-1 background-secondary text-white p-2 border-radius-sm hover-scale transition-slow">
+          <p class="mb-0">I'm an auto-width .col-auto item, with <code>.order-1</code></p>
+        </div>
+      </div>
+
+      <!-- NEGATIVE MARGIN EXAMPLE -->
+      <div class="mt-5 background-gray p-4 text-white">
+        <div class="background-dark p-3 border-radius-sm mt-neg-3 text-center">
+          <strong>This container is pulled up using <code>.mt-neg-3</code></strong>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- CALL TO ACTION -->
+  <section class="background-secondary py-5 text-center text-white mt-10">
+    <div class="container">
+      <h2 class="text-xl mb-2">Ready to Dive In?</h2>
+      <p class="mx-auto w-50 mb-4">
+        Start building with our SCSS framework. It’s free, easy to set up, and fully customizable.
+      </p>
+      <a href="#" 
+         class="background-dark text-white py-2 px-5 border-radius-md hover-scale transition-fast display-inline-block">
+        Download Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="background-black text-center py-5 mt-10 text-white">
-    <p>&copy; 2025 Your Name</p>
+    <p class="mb-2">&copy; 2025 Your Name</p>
+    <p>Built with our <span class="text-info">SCSS Utility Framework</span>!</p>
   </footer>
+
 </body>
 </html>
