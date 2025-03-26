@@ -1,21 +1,15 @@
 {
   "name": "lightweight-scss-framework",
   "version": "2.0.0",
-  "description": "SCSS framework compiling directly to a css/ folder in the project root.",
+  "description": "SCSS framework compiling directly to a css/ folder in the project root for Netlify deployment.",
   "main": "index.html",
   "scripts": {
     "prebuild": "mkdir -p css",
     "build": "sass scss/main.scss css/framework.css --style=expanded"
   },
-  "keywords": [
-    "scss",
-    "css",
-    "framework",
-    "lightweight"
-  ],
   "author": "Your Name",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "sass": "^1.62.0"
   }
 }
