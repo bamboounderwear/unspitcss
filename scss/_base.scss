@@ -1,11 +1,9 @@
-/* 
-  Updated _base.scss 
-  - Replaced the deprecated darken() function with color.adjust()
+/* _base.scss 
+   Basic styling & vertical rhythm. 
+   Also addresses the deprecation of darken() 
 */
 
 @use "sass:color";
-
-/* Basic HTML elements styling and vertical rhythm baseline */
 
 body {
   font-family: var(--font-family-base);
@@ -28,7 +26,6 @@ p {
 a {
   color: var(--color-primary);
   text-decoration: none;
-
   &:hover,
   &:focus {
     text-decoration: underline;
@@ -36,26 +33,26 @@ a {
 }
 
 /* 
-  If you previously had:
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
-  ...this triggers a deprecation warning in modern Sass. 
-  We'll use color.adjust() to reduce lightness by 10%.
+   Example usage of $primary-color from _variables.scss
+   Replacing darken() with color.adjust(...) 
 */
 button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   cursor: pointer;
+
+  // Normal state uses CSS custom property
   background-color: var(--color-primary);
   color: var(--color-white);
+
   border: none;
   border-radius: var(--border-radius-sm);
   padding: var(--spacing-2) var(--spacing-3);
   transition: background-color 0.2s ease;
 
-  // Use color.adjust() to comply with Sass deprecation guidelines
+  // For hover, do color manipulation in Sass
+  // "color.adjust($primary-color, $lightness: -10%)" is the recommended approach
   &:hover {
     background-color: color.adjust($primary-color, $lightness: -10%);
   }

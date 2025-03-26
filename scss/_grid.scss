@@ -1,11 +1,10 @@
-@import 'mixins';
-
-/* 
-  Simple grid system based on flex:
-  - .row => display flex row
-  - .col-* => widths
-  - Offsets
+/* _grid.scss
+   Responsive grid system with flex. 
+   Using percentage($i / 12) to avoid invalid operations with 100%
 */
+
+@import 'mixins'; // for respond-to()
+@use "sass:math"; // to use math.percentage()
 
 .row {
   display: flex;
@@ -19,80 +18,76 @@
   padding-left: 0.5rem;
 }
 
-/* Number of columns: 12
+/* 
    We'll define .col-sm-X, .col-md-X, .col-lg-X, .col-xl-X, .col-xxl-X for X in 1..12
-   Also define offsets for each.
+   Using math.percentage($i / 12) to produce e.g. 8.33333%
 */
 @for $i from 1 through 12 {
-  /* SM */
+
   .col-sm-#{$i} {
     @include respond-to(sm) {
-      flex: 0 0 (100% * #{$i} / 12);
-      max-width: (100% * #{$i} / 12);
+      flex: 0 0 math.percentage($i / 12);
+      max-width: math.percentage($i / 12);
     }
   }
 
-  /* MD */
   .col-md-#{$i} {
     @include respond-to(md) {
-      flex: 0 0 (100% * #{$i} / 12);
-      max-width: (100% * #{$i} / 12);
+      flex: 0 0 math.percentage($i / 12);
+      max-width: math.percentage($i / 12);
     }
   }
 
-  /* LG */
   .col-lg-#{$i} {
     @include respond-to(lg) {
-      flex: 0 0 (100% * #{$i} / 12);
-      max-width: (100% * #{$i} / 12);
+      flex: 0 0 math.percentage($i / 12);
+      max-width: math.percentage($i / 12);
     }
   }
 
-  /* XL */
   .col-xl-#{$i} {
     @include respond-to(xl) {
-      flex: 0 0 (100% * #{$i} / 12);
-      max-width: (100% * #{$i} / 12);
+      flex: 0 0 math.percentage($i / 12);
+      max-width: math.percentage($i / 12);
     }
   }
 
-  /* XXL */
   .col-xxl-#{$i} {
     @include respond-to(xxl) {
-      flex: 0 0 (100% * #{$i} / 12);
-      max-width: (100% * #{$i} / 12);
+      flex: 0 0 math.percentage($i / 12);
+      max-width: math.percentage($i / 12);
     }
   }
 
-  /* Offsets (SM -> XXL) */
+  /* Offsets */
   .offset-sm-#{$i} {
     @include respond-to(sm) {
-      margin-left: (100% * #{$i} / 12);
+      margin-left: math.percentage($i / 12);
     }
   }
   .offset-md-#{$i} {
     @include respond-to(md) {
-      margin-left: (100% * #{$i} / 12);
+      margin-left: math.percentage($i / 12);
     }
   }
   .offset-lg-#{$i} {
     @include respond-to(lg) {
-      margin-left: (100% * #{$i} / 12);
+      margin-left: math.percentage($i / 12);
     }
   }
   .offset-xl-#{$i} {
     @include respond-to(xl) {
-      margin-left: (100% * #{$i} / 12);
+      margin-left: math.percentage($i / 12);
     }
   }
   .offset-xxl-#{$i} {
     @include respond-to(xxl) {
-      margin-left: (100% * #{$i} / 12);
+      margin-left: math.percentage($i / 12);
     }
   }
 }
 
-/* Container classes */
+/* Container class using our container mixin */
 .container {
   @include container;
 }

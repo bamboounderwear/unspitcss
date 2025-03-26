@@ -1,11 +1,10 @@
 /* 
-  Updated _variables.scss 
-  - Includes a Sass variable for primary color
-  - Assigns that Sass variable to the CSS custom property
+  _variables.scss
+  - Contains both Sass variables & CSS custom properties
 */
 
-/* Sass variable for color manipulations */
-$primary-color: #3498db; // must be a valid Sass color literal
+/* Sass color variable for manipulations */
+$primary-color: #3498db;
 
 :root {
   /* Colors */
@@ -14,38 +13,34 @@ $primary-color: #3498db; // must be a valid Sass color literal
   --color-light-gray: #f3f3f3;
   --color-gray: #999;
 
-  /* 
-    We now assign the same Sass color to the CSS variable.
-    This ensures var(--color-primary) can still be used in the final output,
-    but we do color manipulation via $primary-color in Sass.
-  */
+  /* Map Sass primary color into a CSS var */
   --color-primary: #{$primary-color};
 
   --color-success: #2ecc71;
   --color-warning: #f1c40f;
   --color-danger: #e74c3c;
 
-  /* Default background/text (Light Mode) */
+  /* Default background/text */
   --color-background: #ffffff;
   --color-text: #000000;
 
   /* Typography */
   --font-family-base: 'Helvetica Neue', Arial, sans-serif;
   --font-size-base: 1rem; 
-  --line-height: 1.5;    
+  --line-height: 1.5;
 
-  /* Spacing Scale (Extended) */
+  /* Spacing Scale */
   --spacing-0: 0;
-  --spacing-1: 0.25rem;  
-  --spacing-2: 0.5rem;   
-  --spacing-3: 1rem;     
-  --spacing-4: 1.5rem;   
-  --spacing-5: 2rem;     
-  --spacing-6: 3rem;     
-  --spacing-7: 4rem;     
-  --spacing-8: 5rem;     
-  --spacing-9: 6rem;     
-  --spacing-10: 8rem;    
+  --spacing-1: 0.25rem; 
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --spacing-6: 3rem;
+  --spacing-7: 4rem;
+  --spacing-8: 5rem;
+  --spacing-9: 6rem;
+  --spacing-10: 8rem;
 
   /* Fluid Typography */
   --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
@@ -68,7 +63,7 @@ $primary-color: #3498db; // must be a valid Sass color literal
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
 
   /* Border Radius */
-  --border-radius-sm: 0.25rem;
+  --border-radius-sm: 0.25rem; 
   --border-radius-md: 0.5rem;
   --border-radius-lg: 1rem;
 

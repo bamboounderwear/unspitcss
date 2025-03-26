@@ -1,14 +1,14 @@
-@import 'mixins'; // ensure respond-to is available
+/* _utilities.scss 
+   Contains utility classes, including the gap loop 
+   that requires $generic-gap-values 
+*/
 
-/* ----------------------------------
-   Define $generic-gap-values to avoid 
-   the 'Undefined variable' error 
------------------------------------ */
+@import 'mixins'; // ensure respond-to() is available
+
+/* Ensure $generic-gap-values is defined FIRST */
 $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
-/* ===================================
-   Spacing Utilities
-=================================== */
+/* Spacing utilities */
 @for $i from 0 through 10 {
   .m-#{$i}  { margin: var(--spacing-#{$i}) !important; }
   .mt-#{$i} { margin-top: var(--spacing-#{$i}) !important; }
@@ -41,20 +41,16 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
-/* ===================================
-   Display Utilities
-=================================== */
+/* Display utilities */
 .display-block { display: block !important; }
 .display-inline { display: inline !important; }
 .display-inline-block { display: inline-block !important; }
 .display-flex { display: flex !important; }
 .display-grid { display: grid !important; }
 
-/* Responsive display classes: d-sm-none, d-sm-block, etc. */
-.d-none {
-  display: none !important;
-}
+.d-none { display: none !important; }
 
+/* Responsive display classes */
 @each $bp in (sm, md, lg, xl, xxl) {
   .d-#{$bp}-none {
     @include respond-to($bp) {
@@ -88,9 +84,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   }
 }
 
-/* ==================================
-   Text Utilities
-================================== */
+/* Text utilities */
 .text-left   { text-align: left !important; }
 .text-center { text-align: center !important; }
 .text-right  { text-align: right !important; }
@@ -110,9 +104,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .text-xl   { font-size: var(--font-size-xl) !important; }
 .text-2xl  { font-size: var(--font-size-2xl) !important; }
 
-/* ==================================
-   Background Utilities
-================================== */
+/* Background utilities */
 .background-black       { background-color: var(--color-black) !important; color: var(--color-white) !important; }
 .background-white       { background-color: var(--color-white) !important; color: var(--color-black) !important; }
 .background-light-gray  { background-color: var(--color-light-gray) !important; }
@@ -122,9 +114,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .background-warning     { background-color: var(--color-warning) !important; }
 .background-danger      { background-color: var(--color-danger) !important; color: var(--color-white) !important; }
 
-/* ==================================
-   Text Color Utilities
-================================== */
+/* Text color utilities */
 .text-black    { color: var(--color-black) !important; }
 .text-white    { color: var(--color-white) !important; }
 .text-gray     { color: var(--color-gray) !important; }
@@ -133,9 +123,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .text-warning  { color: var(--color-warning) !important; }
 .text-danger   { color: var(--color-danger) !important; }
 
-/* ==================================
-   Flex Utilities
-================================== */
+/* Flex utilities */
 .flex-column { flex-direction: column !important; }
 .flex-row    { flex-direction: row !important; }
 .flex-wrap   { flex-wrap: wrap !important; }
@@ -144,19 +132,14 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .justify-between { justify-content: space-between !important; }
 .align-center { align-items: center !important; }
 
-/* 
-   Gap utility (for flex and grid).
-   Loops over $generic-gap-values to create .gap-0..gap-10
-*/
+/* Gap utilities for flex/grid */
 @each $gap in $generic-gap-values {
   .gap-#{$gap} {
     gap: var(--spacing-#{$gap}) !important;
   }
 }
 
-/* ==================================
-   Border Utilities
-================================== */
+/* Border utilities */
 .border {
   border: 1px solid var(--color-gray) !important;
 }
@@ -177,9 +160,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   border-radius: var(--border-radius-lg) !important;
 }
 
-/* ==================================
-   Shadow Utilities
-================================== */
+/* Shadow utilities */
 .shadow-sm {
   box-shadow: var(--shadow-sm) !important;
 }
@@ -193,9 +174,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
   box-shadow: none !important;
 }
 
-/* ==================================
-   Width/Height Utilities
-================================== */
+/* Width/Height utilities */
 .w-25  { width: 25% !important; }
 .w-50  { width: 50% !important; }
 .w-75  { width: 75% !important; }
@@ -206,9 +185,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .h-100 { height: 100% !important; }
 .min-h-100vh { min-height: 100vh !important; }
 
-/* ==================================
-   Positioning Utilities
-================================== */
+/* Positioning utilities */
 .position-static    { position: static !important; }
 .position-relative  { position: relative !important; }
 .position-absolute  { position: absolute !important; }
@@ -218,9 +195,7 @@ $generic-gap-values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 .bottom-0 { bottom: 0 !important; }
 .left-0   { left: 0 !important; }
 
-/* ==================================
-   Z-Index Utilities
-================================== */
+/* Z-Index utilities */
 .z-0   { z-index: var(--z-0) !important; }
 .z-1   { z-index: var(--z-1) !important; }
 .z-10  { z-index: var(--z-10) !important; }
