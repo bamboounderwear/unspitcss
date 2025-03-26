@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'reset';
+@import 'base';
+@import 'mixins';
+@import 'utilities';
+@import 'grid';
+
+/* 
+  Main entry file
+  - Imports all partials
+  - Add any global overrides or theming below
+*/
+
+/* Example global override */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional Dark Mode:
+   We can override color tokens for a "dark-mode" class 
+   or [data-theme="dark"] if you prefer attribute-based.
+
+   Example:
+*/
+.dark-mode {
+  --color-background: #111;
+  --color-text: #fafafa;
+  --color-gray: #777;
+}

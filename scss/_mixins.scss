@@ -1,0 +1,64 @@
+/* Common mixins for media queries, containers, etc. */
+
+/* Breakpoints */
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: #{$xs}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == sm {
+    @media (min-width: #{$sm}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: #{$md}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: #{$lg}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: #{$xl}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xxl {
+    @media (min-width: #{$xxl}) {
+      @content;
+    }
+  }
+}
+
+/* Container mixin for multiple breakpoints */
+@mixin container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include respond-to(sm) {
+    max-width: var(--container-max-width-sm);
+  }
+  @include respond-to(md) {
+    max-width: var(--container-max-width-md);
+  }
+  @include respond-to(lg) {
+    max-width: var(--container-max-width-lg);
+  }
+  @include respond-to(xl) {
+    max-width: var(--container-max-width-xl);
+  }
+  @include respond-to(xxl) {
+    max-width: var(--container-max-width-xxl);
+  }
+}
