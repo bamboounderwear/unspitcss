@@ -1,4 +1,11 @@
-/* Basic HTML elements styling and vertical rhythm baseline */
+/* 
+  Updated _base.scss 
+  - Uses the Sass variable `$primary-color` for color manipulations (e.g., darken).
+  - The normal (non-hover) state can still use var(--color-primary) 
+    if you want your final CSS to rely on the custom property. 
+*/
+
+/* Basic HTML elements and vertical rhythm baseline */
 
 body {
     font-family: var(--font-family-base);
@@ -28,11 +35,21 @@ body {
     }
   }
   
+  /* 
+    If you previously had: 
+    background-color: var(--color-primary);
+    &:hover {
+      background-color: darken(var(--color-primary), 10%);
+    }
+    That caused Sass to fail. 
+    We fix by referencing $primary-color for the Sass function. 
+  */
   button {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     cursor: pointer;
+    /* Normal state can use the CSS variable if you want runtime theming */
     background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
@@ -40,8 +57,12 @@ body {
     padding: var(--spacing-2) var(--spacing-3);
     transition: background-color 0.2s ease;
   
+    /* 
+      Use the Sass variable $primary-color inside darken() to avoid the error. 
+      This produces a static color in your final CSS. 
+    */
     &:hover {
-      background-color: darken(var(--color-primary), 10%);
+      background-color: darken($primary-color, 10%);
     }
   }
   

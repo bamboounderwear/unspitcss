@@ -1,68 +1,82 @@
+/* 
+  Updated _variables.scss 
+  - Includes a Sass variable for primary color
+  - Assigns that Sass variable to the CSS custom property
+*/
+
+/* Sass variable for color manipulations */
+$primary-color: #3498db; // must be a valid Sass color literal
+
 :root {
-    /*=== Colors ===*/
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-light-gray: #f3f3f3;
-    --color-gray: #999999;
-    --color-primary: #3498db;
-    --color-success: #2ecc71;
-    --color-warning: #f1c40f;
-    --color-danger: #e74c3c;
-  
-    /*=== Default Background/Text (Light Mode) ===*/
-    --color-background: #ffffff;
-    --color-text: #000000;
-  
-    /*=== Typography ===*/
-    --font-family-base: 'Helvetica Neue', Arial, sans-serif;
-    --font-size-base: 1rem; /* 16px base if desired */
-    --line-height: 1.5;     /* Adjust for vertical rhythm */
-  
-    /*=== Spacing Scale (Extended) ===*/
-    --spacing-0: 0;
-    --spacing-1: 0.25rem;  /* 4px   */
-    --spacing-2: 0.5rem;   /* 8px   */
-    --spacing-3: 1rem;     /* 16px  */
-    --spacing-4: 1.5rem;   /* 24px  */
-    --spacing-5: 2rem;     /* 32px  */
-    --spacing-6: 3rem;     /* 48px  */
-    --spacing-7: 4rem;     /* 64px  */
-    --spacing-8: 5rem;     /* 80px  */
-    --spacing-9: 6rem;     /* 96px  */
-    --spacing-10: 8rem;    /* 128px */
-  
-    /*=== Fluid Typography ===*/
-    --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);
-    --font-size-md: clamp(1rem, 2vw, 1.125rem);
-    --font-size-lg: clamp(1.25rem, 3vw, 1.5rem);
-    --font-size-xl: clamp(1.5rem, 4vw, 2rem);
-    --font-size-2xl: clamp(2rem, 5vw, 2.5rem);
-  
-    /*=== Container max-widths ===*/
-    --container-max-width-sm: 540px;
-    --container-max-width-md: 720px;
-    --container-max-width-lg: 960px;
-    --container-max-width-xl: 1140px;
-    --container-max-width-xxl: 1320px;
-  
-    /*=== Box Shadows ===*/
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
-  
-    /*=== Border Radius ===*/
-    --border-radius-sm: 0.25rem;  /* 4px   */
-    --border-radius-md: 0.5rem;   /* 8px   */
-    --border-radius-lg: 1rem;     /* 16px  */
-  
-    /*=== Z-index scale ===*/
-    --z-0: 0;
-    --z-1: 1;
-    --z-10: 10;
-    --z-50: 50;
-    --z-100: 100;
-    --z-999: 999;
-  
-  }
-  
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-light-gray: #f3f3f3;
+  --color-gray: #999;
+
+  /* 
+    We now assign the same Sass color to the CSS variable.
+    This ensures var(--color-primary) can still be used in the final output,
+    but we do color manipulation via $primary-color in Sass.
+  */
+  --color-primary: #{$primary-color};
+
+  --color-success: #2ecc71;
+  --color-warning: #f1c40f;
+  --color-danger: #e74c3c;
+
+  /* Default background/text (Light Mode) */
+  --color-background: #ffffff;
+  --color-text: #000000;
+
+  /* Typography */
+  --font-family-base: 'Helvetica Neue', Arial, sans-serif;
+  --font-size-base: 1rem; 
+  --line-height: 1.5;    
+
+  /* Spacing Scale (Extended) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;  
+  --spacing-2: 0.5rem;   
+  --spacing-3: 1rem;     
+  --spacing-4: 1.5rem;   
+  --spacing-5: 2rem;     
+  --spacing-6: 3rem;     
+  --spacing-7: 4rem;     
+  --spacing-8: 5rem;     
+  --spacing-9: 6rem;     
+  --spacing-10: 8rem;    
+
+  /* Fluid Typography */
+  --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);
+  --font-size-md: clamp(1rem, 2vw, 1.125rem);
+  --font-size-lg: clamp(1.25rem, 3vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 4vw, 2rem);
+  --font-size-2xl: clamp(2rem, 5vw, 2.5rem);
+
+  /* Container max-widths */
+  --container-max-width-sm: 540px;
+  --container-max-width-md: 720px;
+  --container-max-width-lg: 960px;
+  --container-max-width-xl: 1140px;
+  --container-max-width-xxl: 1320px;
+
+  /* Box Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+
+  /* Z-index scale */
+  --z-0: 0;
+  --z-1: 1;
+  --z-10: 10;
+  --z-50: 50;
+  --z-100: 100;
+  --z-999: 999;
+}
