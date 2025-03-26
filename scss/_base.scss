@@ -1,74 +1,68 @@
 /* 
   Updated _base.scss 
-  - Uses the Sass variable `$primary-color` for color manipulations (e.g., darken).
-  - The normal (non-hover) state can still use var(--color-primary) 
-    if you want your final CSS to rely on the custom property. 
+  - Replaced the deprecated darken() function with color.adjust()
 */
 
-/* Basic HTML elements and vertical rhythm baseline */
+@use "sass:color";
+
+/* Basic HTML elements styling and vertical rhythm baseline */
 
 body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height);
-    color: var(--color-text);
-    background-color: var(--color-background);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: calc(var(--spacing-2) * 1);
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: var(--spacing-3);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    margin-bottom: calc(var(--spacing-2) * 1);
-    line-height: 1.2;
+}
+
+/* 
+  If you previously had:
+  &:hover {
+    background-color: darken($primary-color, 10%);
   }
-  
-  p {
-    margin-bottom: var(--spacing-3);
+  ...this triggers a deprecation warning in modern Sass. 
+  We'll use color.adjust() to reduce lightness by 10%.
+*/
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-2) var(--spacing-3);
+  transition: background-color 0.2s ease;
+
+  // Use color.adjust() to comply with Sass deprecation guidelines
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: -10%);
   }
-  
-  a {
-    color: var(--color-primary);
-    text-decoration: none;
-  
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-  
-  /* 
-    If you previously had: 
-    background-color: var(--color-primary);
-    &:hover {
-      background-color: darken(var(--color-primary), 10%);
-    }
-    That caused Sass to fail. 
-    We fix by referencing $primary-color for the Sass function. 
-  */
-  button {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    cursor: pointer;
-    /* Normal state can use the CSS variable if you want runtime theming */
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-2) var(--spacing-3);
-    transition: background-color 0.2s ease;
-  
-    /* 
-      Use the Sass variable $primary-color inside darken() to avoid the error. 
-      This produces a static color in your final CSS. 
-    */
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
