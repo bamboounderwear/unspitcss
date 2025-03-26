@@ -1,8 +1,4 @@
-/* main.scss 
-   The master entry file that compiles everything into css/framework.css
-   Using the older @import approach for partials, but we put them 
-   above any extra rules in this file.
-*/
+/* main.scss */
 
 @import 'variables';
 @import 'reset';
@@ -11,13 +7,13 @@
 @import 'utilities';
 @import 'grid';
 
-/* Any global overrides or custom styles can go below */
+/* Any global overrides can go below */
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Optional Dark Mode override example */
+/* Optional Dark Mode override */
 .dark-mode {
   --color-background: #111;
   --color-text: #fafafa;

@@ -1,22 +1,18 @@
 /* _variables.scss */
-/* Sass variable for color manipulation */
+
 $primary-color: #3498db;
 
 :root {
-  /* Colors */
   --color-black: #000;
   --color-white: #fff;
   --color-light-gray: #f3f3f3;
   --color-gray: #999;
-
-  /* Map Sass primary color into a CSS var */
   --color-primary: #{$primary-color};
 
   --color-success: #2ecc71;
   --color-warning: #f1c40f;
   --color-danger: #e74c3c;
 
-  /* Background/text */
   --color-background: #ffffff;
   --color-text: #000000;
 

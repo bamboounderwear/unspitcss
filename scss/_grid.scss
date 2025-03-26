@@ -1,9 +1,7 @@
-/* _grid.scss 
-   Make sure @use "sass:math"; is at the top, before @import or rules
-*/
+/* _grid.scss */
 
 @use "sass:math";
-@import 'mixins'; // older style import to get respond-to()
+@import 'mixins'; // for respond-to()
 
 .row {
   display: flex;
@@ -17,10 +15,7 @@
   padding-left: 0.5rem;
 }
 
-/* 
-   .col-sm-X, .col-md-X, .col-lg-X, .col-xl-X, .col-xxl-X 
-   Using math.percentage($i / 12) => e.g. 8.33333%
-*/
+/* 12 columns, using math.percentage($i/12) to yield something like 8.333333% */
 @for $i from 1 through 12 {
   .col-sm-#{$i} {
     @include respond-to(sm) {
@@ -81,7 +76,7 @@
   }
 }
 
-/* Container class using our container mixin */
+/* Container class */
 .container {
   @include container;
 }
