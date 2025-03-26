@@ -4,9 +4,8 @@
   "description": "SCSS framework compiling directly to a css/ folder in the project root.",
   "main": "index.html",
   "scripts": {
-    "prebuild": "mkdir -p css", 
-    "build": "sass scss/main.scss css/framework.css --style=expanded",
-    "watch": "sass --watch scss/main.scss css/framework.css --style=expanded"
+    "prebuild": "mkdir -p css",
+    "build": "sass scss/main.scss css/framework.css --style=expanded"
   },
   "keywords": [
     "scss",
