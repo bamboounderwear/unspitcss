@@ -160,8 +160,7 @@ $breakpoints: (
     line-height: 1.2;
   }
 }
-
-// 2c. Color Utilities (text-* and bg-*)
+// Light mode classes
 @each $colorName in (primary, secondary, success, danger, warning, info, body-text, muted-text, background, surface) {
   .text-#{if($colorName == 'body-text', 'body', if($colorName == 'muted-text', 'muted', $colorName))} {
     color: map-get($theme-light, $colorName) !important;
@@ -169,7 +168,11 @@ $breakpoints: (
   .bg-#{if($colorName == 'body-text', 'body', if($colorName == 'surface', 'surface', $colorName))} {
     background-color: map-get($theme-light, $colorName) !important;
   }
-  .dark & {
+}
+
+// Dark mode overrides wrapped inside a top-level .dark block
+.dark {
+  @each $colorName in (primary, secondary, success, danger, warning, info, body-text, muted-text, background, surface) {
     .text-#{if($colorName == 'body-text', 'body', if($colorName == 'muted-text', 'muted', $colorName))} {
       color: map-get($theme-dark, $colorName) !important;
     }
@@ -178,6 +181,7 @@ $breakpoints: (
     }
   }
 }
+
 
 
 // 2d. Layout Utilities (Display, Flex, Grid, etc.)
