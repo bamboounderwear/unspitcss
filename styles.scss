@@ -1,0 +1,508 @@
+//
+// Tailwind-Style SCSS Framework
+// -----------------------------
+// Single-file SCSS framework with design tokens, utility classes, and components.
+//
+// 1) Design Tokens
+// 2) Utility Classes
+// 3) Components
+//
+
+// ---------------------
+// 1) DESIGN TOKENS
+// ---------------------
+$color-palette: (
+  "blue-500": #3b82f6,
+  "blue-600": #2563eb,
+  "pink-500": #ec4899,
+  "pink-600": #db2777,
+  "green-500": #10b981,
+  "red-500":   #ef4444,
+  "yellow-500": #f59e0b,
+  "gray-900":   #111827,
+  "gray-800":   #1f2937,
+  "gray-700":   #374151,
+  "gray-200":   #e5e7eb,
+  "gray-100":   #f3f4f6,
+  "gray-50":    #f9fafb,
+  "white":      #ffffff,
+  "black":      #000000
+);
+
+// Light theme semantic
+$theme-light: (
+  primary:    map-get($color-palette, "blue-500"),
+  secondary:  map-get($color-palette, "pink-500"),
+  success:    map-get($color-palette, "green-500"),
+  danger:     map-get($color-palette, "red-500"),
+  warning:    map-get($color-palette, "yellow-500"),
+  info:       map-get($color-palette, "blue-500"),
+  background: map-get($color-palette, "gray-50"),
+  surface:    map-get($color-palette, "white"),
+  body-text:  map-get($color-palette, "gray-900"),
+  muted-text: map-get($color-palette, "gray-700")
+);
+
+// Dark theme semantic
+$theme-dark: (
+  primary:    map-get($color-palette, "blue-600"),
+  secondary:  map-get($color-palette, "pink-600"),
+  success:    map-get($color-palette, "green-500"),
+  danger:     map-get($color-palette, "red-500"),
+  warning:    map-get($color-palette, "yellow-500"),
+  info:       map-get($color-palette, "blue-500"),
+  background: map-get($color-palette, "gray-900"),
+  surface:    map-get($color-palette, "gray-800"),
+  body-text:  map-get($color-palette, "gray-100"),
+  muted-text: map-get($color-palette, "gray-200")
+);
+
+// Spacing scale
+$spacers: (
+  0: 0rem,
+  1: 0.25rem,  // 4px
+  2: 0.5rem,   // 8px
+  3: 1rem,     // 16px
+  4: 1.5rem,   // 24px
+  5: 2rem,     // 32px
+  6: 4rem      // 64px
+);
+
+// Typography scale
+$font-sizes: (
+  xs:   0.75rem,   // 12px
+  sm:   0.875rem,  // 14px
+  base: 1rem,      // 16px
+  lg:   1.25rem,   // 20px
+  xl:   1.5rem,    // 24px
+  "2xl": 2rem      // 32px
+);
+
+$font-weights: (
+  normal: 400,
+  medium: 500,
+  bold:   700
+);
+
+$font-family-base: "Helvetica, Arial, sans-serif";
+
+// Border radius
+$radii: (
+  none: 0,
+  sm:   0.125rem,
+  base: 0.25rem,
+  lg:   0.5rem,
+  full: 9999px
+);
+
+// Breakpoints
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
+
+
+// ---------------------
+// 2) UTILITY CLASSES
+// ---------------------
+
+// 2.1 Spacing (Margin & Padding)
+@each $key, $val in $spacers {
+  .m-#{$key}    { margin: $val !important; }
+  .mt-#{$key}   { margin-top: $val !important; }
+  .mr-#{$key}   { margin-right: $val !important; }
+  .mb-#{$key}   { margin-bottom: $val !important; }
+  .ml-#{$key}   { margin-left: $val !important; }
+  .mx-#{$key}   { margin-left: $val !important; margin-right: $val !important; }
+  .my-#{$key}   { margin-top: $val !important; margin-bottom: $val !important; }
+
+  .p-#{$key}    { padding: $val !important; }
+  .pt-#{$key}   { padding-top: $val !important; }
+  .pr-#{$key}   { padding-right: $val !important; }
+  .pb-#{$key}   { padding-bottom: $val !important; }
+  .pl-#{$key}   { padding-left: $val !important; }
+  .px-#{$key}   { padding-left: $val !important; padding-right: $val !important; }
+  .py-#{$key}   { padding-top: $val !important; padding-bottom: $val !important; }
+
+  // Responsive variants
+  @each $bp, $width in $breakpoints {
+    @media (min-width: #{$width}) {
+      .#{$bp}\\:m-#{$key}  { margin: $val !important; }
+      .#{$bp}\\:mt-#{$key} { margin-top: $val !important; }
+      .#{$bp}\\:mr-#{$key} { margin-right: $val !important; }
+      .#{$bp}\\:mb-#{$key} { margin-bottom: $val !important; }
+      .#{$bp}\\:ml-#{$key} { margin-left: $val !important; }
+      .#{$bp}\\:mx-#{$key} { margin-left: $val !important; margin-right: $val !important; }
+      .#{$bp}\\:my-#{$key} { margin-top: $val !important; margin-bottom: $val !important; }
+
+      .#{$bp}\\:p-#{$key}  { padding: $val !important; }
+      .#{$bp}\\:pt-#{$key} { padding-top: $val !important; }
+      .#{$bp}\\:pr-#{$key} { padding-right: $val !important; }
+      .#{$bp}\\:pb-#{$key} { padding-bottom: $val !important; }
+      .#{$bp}\\:pl-#{$key} { padding-left: $val !important; }
+      .#{$bp}\\:px-#{$key} { padding-left: $val !important; padding-right: $val !important; }
+      .#{$bp}\\:py-#{$key} { padding-top: $val !important; padding-bottom: $val !important; }
+    }
+  }
+}
+
+
+// 2.2 Typography
+.text-left   { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right  { text-align: right !important; }
+
+.italic    { font-style: italic !important; }
+.uppercase { text-transform: uppercase !important; }
+
+@each $name, $weight in $font-weights {
+  .font-#{$name} { font-weight: $weight !important; }
+}
+
+@each $name, $size in $font-sizes {
+  .text-#{$name} { font-size: $size !important; line-height: 1.2; }
+}
+
+
+// 2.3 Color Utilities (text / bg) with .dark override
+@each $colorName in (primary, secondary, success, danger, warning, info, body-text, muted-text, background, surface) {
+  // text
+  .text-#{if($colorName == 'body-text', 'body', $colorName == 'muted-text' ? 'muted' : $colorName)} {
+    color: map-get($theme-light, $colorName) !important;
+  }
+  // bg
+  .bg-#{if($colorName == 'body-text', 'body', $colorName == 'surface' ? 'surface' : $colorName)} {
+    background-color: map-get($theme-light, $colorName) !important;
+  }
+
+  // Dark theme overrides
+  .dark & {
+    .text-#{if($colorName == 'body-text', 'body', $colorName == 'muted-text' ? 'muted' : $colorName)} {
+      color: map-get($theme-dark, $colorName) !important;
+    }
+    .bg-#{if($colorName == 'body-text', 'body', $colorName == 'surface' ? 'surface' : $colorName)} {
+      background-color: map-get($theme-dark, $colorName) !important;
+    }
+  }
+}
+
+// For quick reference: .text-white, .bg-white, .text-black, .bg-black
+.text-white { color: map-get($color-palette, "white") !important; }
+.bg-white   { background-color: map-get($color-palette, "white") !important; }
+.text-black { color: map-get($color-palette, "black") !important; }
+.bg-black   { background-color: map-get($color-palette, "black") !important; }
+
+
+// 2.4 Layout (Display, Flex, Grid)
+.block       { display: block !important; }
+.inline      { display: inline !important; }
+.inline-block{ display: inline-block !important; }
+.hidden      { display: none !important; }
+
+.flex        { display: flex !important; }
+.inline-flex { display: inline-flex !important; }
+.grid        { display: grid !important; }
+
+.flex-row    { flex-direction: row !important; }
+.flex-col    { flex-direction: column !important; }
+.flex-wrap   { flex-wrap: wrap !important; }
+
+.items-start   { align-items: flex-start !important; }
+.items-center  { align-items: center !important; }
+.items-end     { align-items: flex-end !important; }
+
+.justify-start { justify-content: flex-start !important; }
+.justify-center{ justify-content: center !important; }
+.justify-between { justify-content: space-between !important; }
+.justify-end   { justify-content: flex-end !important; }
+
+.w-full  { width: 100% !important; }
+.h-full  { height: 100% !important; }
+.w-auto  { width: auto !important; }
+.h-auto  { height: auto !important; }
+
+// Gap
+@each $key, $val in $spacers {
+  .gap-#{$key}   { gap: $val !important; }
+  .gap-x-#{$key} { column-gap: $val !important; }
+  .gap-y-#{$key} { row-gap: $val !important; }
+}
+
+
+// 2.5 Borders & Radius
+.border   { border: 1px solid map-get($color-palette, "gray-200") !important; }
+.border-0 { border: none !important; }
+
+// Border color
+@each $c in (primary, secondary, success, danger, warning, info) {
+  .border-#{$c} {
+    border: 1px solid map-get($theme-light, $c) !important;
+  }
+  .dark & {
+    .border-#{$c} {
+      border: 1px solid map-get($theme-dark, $c) !important;
+    }
+  }
+}
+
+// Border radius
+.rounded    { border-radius: map-get($radii, base) !important; }
+.rounded-sm { border-radius: map-get($radii, sm) !important; }
+.rounded-lg { border-radius: map-get($radii, lg) !important; }
+.rounded-full { border-radius: map-get($radii, full) !important; }
+
+
+// ---------------------
+// 3) COMPONENTS
+// ---------------------
+
+// Global base font
+body {
+  font-family: $font-family-base;
+  margin: 0;
+  padding: 0;
+}
+
+// 3.1 Buttons
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: map-get($font-sizes, base);
+  font-weight: map-get($font-weights, medium);
+  font-family: $font-family-base;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: map-get($radii, base);
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus {
+    outline: 2px solid map-get($theme-light, primary);
+    outline-offset: 2px;
+  }
+}
+
+.btn-primary {
+  background-color: map-get($theme-light, primary);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: map-get($theme-light, secondary);
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: map-get($theme-light, primary);
+  border-color: map-get($theme-light, primary);
+}
+
+.dark .btn:focus {
+  outline: 2px solid map-get($theme-dark, primary);
+}
+.dark .btn-primary {
+  background-color: map-get($theme-dark, primary);
+}
+.dark .btn-secondary {
+  background-color: map-get($theme-dark, secondary);
+}
+.dark .btn-outline {
+  color: map-get($theme-dark, primary);
+  border-color: map-get($theme-dark, primary);
+}
+
+
+// 3.2 Cards
+.card {
+  background-color: map-get($theme-light, surface);
+  color: map-get($theme-light, body-text);
+  border-radius: map-get($radii, base);
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.dark .card {
+  background-color: map-get($theme-dark, surface);
+  color: map-get($theme-dark, body-text);
+  box-shadow: none;
+}
+.card-header {
+  font-weight: map-get($font-weights, bold);
+  margin-bottom: 0.5rem;
+  font-size: map-get($font-sizes, lg);
+}
+.card-body {
+  margin-bottom: 0.5rem;
+  font-size: map-get($font-sizes, base);
+}
+.card-footer {
+  text-align: right;
+  font-size: map-get($font-sizes, sm);
+}
+
+
+// 3.3 Navbar
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: map-get($theme-light, primary);
+  color: #fff;
+}
+.dark .navbar {
+  background-color: map-get($theme-dark, primary);
+}
+.navbar-brand {
+  font-size: map-get($font-sizes, xl);
+  font-weight: map-get($font-weights, bold);
+  margin-right: auto;
+}
+.navbar-nav {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+}
+.navbar-nav li {
+  margin-left: 1rem;
+}
+.navbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: map-get($font-sizes, base);
+  padding: 0.25rem;
+}
+.navbar-nav a:hover {
+  text-decoration: underline;
+}
+
+
+// 3.4 Modals
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-dialog {
+  background-color: map-get($theme-light, surface);
+  color: map-get($theme-light, body-text);
+  padding: 1rem;
+  border-radius: map-get($radii, base);
+  max-width: 500px;
+  width: 90%;
+}
+.dark .modal-dialog {
+  background-color: map-get($theme-dark, surface);
+  color: map-get($theme-dark, body-text);
+}
+.modal-header {
+  font-size: map-get($font-sizes, xl);
+  font-weight: map-get($font-weights, bold);
+  margin-bottom: 0.5rem;
+}
+.modal-body {
+  margin-bottom: 0.5rem;
+}
+.modal-footer {
+  text-align: right;
+}
+
+
+// 3.5 Forms
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  font-weight: map-get($font-weights, medium);
+}
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: map-get($font-sizes, base);
+  font-family: $font-family-base;
+  color: map-get($theme-light, body-text);
+  background-color: #fff;
+  border: 1px solid map-get($color-palette, "gray-200");
+  border-radius: map-get($radii, sm);
+}
+.form-control:focus {
+  outline: 2px solid map-get($theme-light, primary);
+  outline-offset: 2px;
+}
+.dark .form-control {
+  background-color: map-get($theme-dark, surface);
+  color: map-get($theme-dark, body-text);
+  border: 1px solid map-get($theme-dark, primary);
+}
+.dark .form-control:focus {
+  outline: 2px solid map-get($theme-dark, primary);
+}
+
+
+// 3.6 Tooltips
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: map-get($radii, sm);
+  font-size: map-get($font-sizes, sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0,0,0,0.75);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.tooltip:hover::after,
+.tooltip:focus::after {
+  opacity: 1;
+}
+.tooltip:hover::before,
+.tooltip:focus::before {
+  opacity: 1;
+}
+.dark .tooltip::after {
+  background: rgba(255,255,255,0.9);
+  color: #000;
+}
+.dark .tooltip::before {
+  border-top-color: rgba(255,255,255,0.9);
+}

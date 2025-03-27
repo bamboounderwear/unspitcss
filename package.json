@@ -1,16 +1,11 @@
 {
-  "name": "lightweight-scss-framework",
-  "version": "2.1.2",
-  "description": "SCSS framework that fixes undefined $gap variable errors by properly defining $generic-gap-values.",
-  "main": "index.html",
+  "name": "tailwind-style-scss-framework",
+  "version": "1.0.0",
   "scripts": {
-    "prebuild": "mkdir -p css",
-    "build": "sass scss/main.scss css/framework.css --style=expanded",
-    "watch": "sass --watch scss/main.scss css/framework.css --style=expanded"
+    "build": "sass styles.scss styles.css --no-source-map",
+    "watch": "sass --watch styles.scss styles.css --no-source-map"
   },
-  "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "sass": "^1.62.0"
   }
 }
